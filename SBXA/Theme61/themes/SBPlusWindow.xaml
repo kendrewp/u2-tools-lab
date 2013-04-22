@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
 
@@ -23,9 +23,9 @@
 
     </ControlTemplate>
 
-    <Style TargetType="{x:Type sbc:SBPlusWindow}">
+    <Style TargetType="{x:Type rkt:SBPlusWindow}">
         
-        <Setter Property="sbc:SBControl.CanEnableGhost" Value="{Binding Path=CurrentForm.(sbc:SBControl.CanEnableGhost), RelativeSource={RelativeSource Mode=Self }}" />
+        <Setter Property="rkt:SBControl.CanEnableGhost" Value="{Binding Path=CurrentForm.(rkt:SBControl.CanEnableGhost), RelativeSource={RelativeSource Mode=Self }}" />
 
         <Setter Property="Template" Value="{StaticResource SBFormContainerTemplate}" />
 

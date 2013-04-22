@@ -9,7 +9,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:mwt="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna"
     >
@@ -21,20 +21,20 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/DefaultFieldStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="SB_PD_P_6_FocusEditTextBoxStyle" BasedOn="{StaticResource DefaultSBFocusEditTextBoxStyle}" TargetType="{x:Type sbc:SBTextBox}">
+    <Style x:Key="SB_PD_P_6_FocusEditTextBoxStyle" BasedOn="{StaticResource DefaultSBFocusEditTextBoxStyle}" TargetType="{x:Type rkt:SBTextBox}">
         <Setter Property="SpellCheck.IsEnabled" Value="False"/>
-        <Setter Property="sbc:SBUISupport.StyleName" Value="SB_PD_P_6_FocusEditTextBoxStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="SB_PD_P_6_FocusEditTextBoxStyle" />
     </Style>
 
-    <Style x:Key="SB_PD_P_6_FieldStyle" BasedOn="{StaticResource BaseSBControlStyle}"  TargetType="{x:Type sbc:SBField}" >
+    <Style x:Key="SB_PD_P_6_FieldStyle" BasedOn="{StaticResource BaseSBControlStyle}"  TargetType="{x:Type rkt:SBField}" >
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="NoEcho" Value="False" />
-                    <Condition Property="sbc:SBField.GuiObjectType" Value="Memo" />
+                    <Condition Property="rkt:SBField.GuiObjectType" Value="Memo" />
                 </MultiTrigger.Conditions>
-                <Setter Property="sbc:SBControl.SBControlStyle" Value="{DynamicResource SBEditTextBoxStyle}" />
-                <Setter Property="sbc:SBControl.SBFocusControlStyle" Value="{DynamicResource SB_PD_P_6_FocusEditTextBoxStyle}"/>
+                <Setter Property="rkt:SBControl.SBControlStyle" Value="{DynamicResource SBEditTextBoxStyle}" />
+                <Setter Property="rkt:SBControl.SBFocusControlStyle" Value="{DynamicResource SB_PD_P_6_FocusEditTextBoxStyle}"/>
             </MultiTrigger>
         </Style.Triggers>
     </Style>

@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
 
@@ -19,115 +19,115 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/Converters.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- TargetType="{x:Type sbc:SBControl}" -->
+    <!-- TargetType="{x:Type rkt:SBControl}" -->
     <!-- BaseSBControlStyle -->
     <Style x:Key="BaseSBControlStyle" >
-        <Setter Property="sbc:SBGUIAttribute.SBGraphic" Value="{Binding Path=GuiObjectDefinition.Graphic, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
-        <Setter Property="sbc:SBGUIAttribute.SBDownGraphic" Value="{Binding Path=GuiObjectDefinition.DownGraphic, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
-        <!-- Moved this property into a trigger lower down, eCase 41516*USA <Setter Property="sbc:SBGUIAttribute.SBStyleName" Value="{Binding Path=GuiObjectDefinition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />-->
-        <Setter Property="sbc:SBGUIAttribute.SBDrawable" Value="1" />
-        <Setter Property="sbc:SBControl.Focusable" Value="False" />
-        <Setter Property="sbc:SBControl.FieldName" Value="{Binding Path=GuiObjectDefinition.FieldDefinition.FieldName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
-        <Setter Property="sbc:SBControl.IsEnabled" Value="{Binding Path=(sbc:SBGUIAttribute.SBEmphasized), RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=TwoWay}" />
+        <Setter Property="rkt:SBGUIAttribute.SBGraphic" Value="{Binding Path=GuiObjectDefinition.Graphic, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+        <Setter Property="rkt:SBGUIAttribute.SBDownGraphic" Value="{Binding Path=GuiObjectDefinition.DownGraphic, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+        <!-- Moved this property into a trigger lower down, eCase 41516*USA <Setter Property="rkt:SBGUIAttribute.SBStyleName" Value="{Binding Path=GuiObjectDefinition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />-->
+        <Setter Property="rkt:SBGUIAttribute.SBDrawable" Value="1" />
+        <Setter Property="rkt:SBControl.Focusable" Value="False" />
+        <Setter Property="rkt:SBControl.FieldName" Value="{Binding Path=GuiObjectDefinition.FieldDefinition.FieldName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+        <Setter Property="rkt:SBControl.IsEnabled" Value="{Binding Path=(rkt:SBGUIAttribute.SBEmphasized), RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=TwoWay}" />
         <Setter Property="Control.HorizontalContentAlignment" Value="{Binding Path=GuiObjectDefinition.Justification, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBTextAlignmentConverter}}" />
         <Setter Property="Control.VerticalContentAlignment" Value="{Binding Path=GuiObjectDefinition.Justification, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBTextAlignmentConverter}}" />
-        <Setter Property="sbc:SBGUIAttribute.SBString" Value="{Binding Path=SBValue, RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay}"/>
-        <Setter Property="sbc:SBGUIAttribute.SBHelpString" Value="{Binding Path=GuiObjectDefinition.HelpString, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=OneWay}" />
-        <Setter Property="sbc:SBControl.SBControlBackground" Value="{DynamicResource SBControlBackground}" />
+        <Setter Property="rkt:SBGUIAttribute.SBString" Value="{Binding Path=SBValue, RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay}"/>
+        <Setter Property="rkt:SBGUIAttribute.SBHelpString" Value="{Binding Path=GuiObjectDefinition.HelpString, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=OneWay}" />
+        <Setter Property="rkt:SBControl.SBControlBackground" Value="{DynamicResource SBControlBackground}" />
 
         <!-- Mapping from server attribute names to XUI properties -->
-        <Setter Property="sbc:SBGUIAttribute.SBAttributeMap">
+        <Setter Property="rkt:SBGUIAttribute.SBAttributeMap">
             <Setter.Value>
-                <sbc:SBAttributeMap>
-                    <sbc:SBAttribute Name="style_name"
-                                     GetProperty="(sbc:SBGUIAttribute.SBStyleName)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBStyleName)" />
-                    <sbc:SBAttribute5 Name="font"
+                <rkt:SBAttributeMap>
+                    <rkt:SBAttribute Name="style_name"
+                                     GetProperty="(rkt:SBGUIAttribute.SBStyleName)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBStyleName)" />
+                    <rkt:SBAttribute5 Name="font"
                                      GetProperty="Control.FontFamily"
                                      GetProperty2="Control.FontSize"
                                      GetProperty3="Control.FontWeight"
                                      GetProperty4="Control.FontStyle"
-                                     GetProperty5="(sbc:SBControl.TextDecorations)"
+                                     GetProperty5="(rkt:SBControl.TextDecorations)"
                                      GetConverter5="{StaticResource SBFontToIDConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBFont)" />
-                    <sbc:SBAttribute Name="drawable"
-                                     GetProperty="(sbc:SBGUIAttribute.SBDrawable)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBDrawable)" />
-                    <sbc:SBAttribute Name="background"
+                                     SetProperty="(rkt:SBGUIAttribute.SBFont)" />
+                    <rkt:SBAttribute Name="drawable"
+                                     GetProperty="(rkt:SBGUIAttribute.SBDrawable)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBDrawable)" />
+                    <rkt:SBAttribute Name="background"
                                      GetProperty="Control.Background" GetConverter="{StaticResource SBColorConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBBackground)"/>
-                    <sbc:SBAttribute Name="foreground" 
+                                     SetProperty="(rkt:SBGUIAttribute.SBBackground)"/>
+                    <rkt:SBAttribute Name="foreground" 
                                      GetProperty="Control.Foreground" GetConverter="{StaticResource SBColorConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBForeground)"/>
-                    <sbc:SBAttribute Name="coordinates"
+                                     SetProperty="(rkt:SBGUIAttribute.SBForeground)"/>
+                    <rkt:SBAttribute Name="coordinates"
                                      GetProperty="Control.Margin"
                                      GetConverter="{StaticResource SBCoordinatesToMarginConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBCoordinates)"/>
-                    <sbc:SBAttribute Name="object_name"
-                                     GetProperty="(sbc:SBGUIAttribute.SBObjectName)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBObjectName)" />
-                    <sbc:SBAttribute2 Name="dimensions"
+                                     SetProperty="(rkt:SBGUIAttribute.SBCoordinates)"/>
+                    <rkt:SBAttribute Name="object_name"
+                                     GetProperty="(rkt:SBGUIAttribute.SBObjectName)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBObjectName)" />
+                    <rkt:SBAttribute2 Name="dimensions"
                                      GetProperty="Control.ActualWidth"
                                      GetProperty2="Control.ActualHeight"
                                      GetConverter2="{StaticResource SBDimensionsMultiConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBDimensions)"/>
-                    <sbc:SBAttribute2 Name="justification"
+                                     SetProperty="(rkt:SBGUIAttribute.SBDimensions)"/>
+                    <rkt:SBAttribute2 Name="justification"
                                      GetProperty="Control.HorizontalContentAlignment"
                                      GetProperty2="Control.VerticalContentAlignment"
                                      GetConverter2="{StaticResource SBTextAlignmentMultiConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBJustification)"/>
-                    <sbc:SBAttribute Name="emphasized"
-                                     GetProperty="(sbc:SBGUIAttribute.SBEmphasized)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBEmphasized)" />
+                                     SetProperty="(rkt:SBGUIAttribute.SBJustification)"/>
+                    <rkt:SBAttribute Name="emphasized"
+                                     GetProperty="(rkt:SBGUIAttribute.SBEmphasized)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBEmphasized)" />
                     <!-- Following attributes are mapped to a SBGUI attribute so they can be used,
                          but aren't yet updated from any controls properties when fetched -->
-                    <sbc:SBAttribute Name ="graphic"
-                                     GetProperty="(sbc:SBGUIAttribute.SBGraphic)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBGraphic)" />
-                    <sbc:SBAttribute Name ="down_graphic"
-                                     GetProperty="(sbc:SBGUIAttribute.SBDownGraphic)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBDownGraphic)" />
+                    <rkt:SBAttribute Name ="graphic"
+                                     GetProperty="(rkt:SBGUIAttribute.SBGraphic)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBGraphic)" />
+                    <rkt:SBAttribute Name ="down_graphic"
+                                     GetProperty="(rkt:SBGUIAttribute.SBDownGraphic)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBDownGraphic)" />
                     
 
                         <!-- As above, but they are not currently used in out styles -->
-                    <sbc:SBAttribute Name="border_color"
-                                     GetProperty="(sbc:SBGUIAttribute.SBBorderColor)"
+                    <rkt:SBAttribute Name="border_color"
+                                     GetProperty="(rkt:SBGUIAttribute.SBBorderColor)"
                                      GetConverter="{StaticResource SBColorConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBBorderColor)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBBorderColor)"
                                      />
-                    <sbc:SBAttribute Name="border_style"
-                                     GetProperty="(sbc:SBGUIAttribute.SBBorderStyle)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBBorderStyle)" />
-                    <sbc:SBAttribute Name="border_width"
-                                     GetProperty="(sbc:SBGUIAttribute.SBBorderWidth)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBBorderWidth)" />
+                    <rkt:SBAttribute Name="border_style"
+                                     GetProperty="(rkt:SBGUIAttribute.SBBorderStyle)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBBorderStyle)" />
+                    <rkt:SBAttribute Name="border_width"
+                                     GetProperty="(rkt:SBGUIAttribute.SBBorderWidth)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBBorderWidth)" />
 
-                    <sbc:SBAttribute Name="string"
-                                     GetProperty="(sbc:SBGUIAttribute.SBString)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBString)"/>
+                    <rkt:SBAttribute Name="string"
+                                     GetProperty="(rkt:SBGUIAttribute.SBString)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBString)"/>
                     
-                    <sbc:SBAttribute Name ="help_string"                                     
-                                     GetProperty="(sbc:SBGUIAttribute.SBHelpString)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBHelpString)"/>
+                    <rkt:SBAttribute Name ="help_string"                                     
+                                     GetProperty="(rkt:SBGUIAttribute.SBHelpString)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBHelpString)"/>
 
                     <!-- Added for eCase 12661*USA (kp June 15, 2010) -->
-                    <sbc:SBAttribute Name ="editable"                                     
-                                     GetProperty="(sbc:SBGUIAttribute.SBEditable)" 
-                                     SetProperty="(sbc:SBGUIAttribute.SBEditable)"/>
+                    <rkt:SBAttribute Name ="editable"                                     
+                                     GetProperty="(rkt:SBGUIAttribute.SBEditable)" 
+                                     SetProperty="(rkt:SBGUIAttribute.SBEditable)"/>
 
                     <!-- Obsolete properties -->
-                    <sbc:SBAttribute Name="input_flag" Supported="Obsolete" />
+                    <rkt:SBAttribute Name="input_flag" Supported="Obsolete" />
 
-                </sbc:SBAttributeMap>
+                </rkt:SBAttributeMap>
             </Setter.Value>
         </Setter>
 
         <Setter Property="Control.Background">
             <Setter.Value>
                 <PriorityBinding FallbackValue="{x:Static SystemColors.ControlBrush}">
-                    <Binding Path="(sbc:SBGUIAttribute.SBBackground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBBackground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Background" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBColorConverter}"/>
-                    <Binding Path="(sbc:SBControl.SBControlBackground)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBControl.SBControlBackground)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}"/>
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
@@ -135,16 +135,16 @@
         <Setter Property="Control.Foreground">
             <Setter.Value>
                 <PriorityBinding >
-                    <Binding Path="(sbc:SBGUIAttribute.SBForeground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBForeground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Foreground" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBColorConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
 
-        <Setter Property="sbc:SBControl.TextAlignment">
+        <Setter Property="rkt:SBControl.TextAlignment">
             <Setter.Value>
                 <PriorityBinding FallbackValue="Left"  >
-                    <Binding Path="(sbc:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Justification" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBTextAlignmentConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
@@ -153,7 +153,7 @@
         <Setter Property="Control.HorizontalContentAlignment">
             <Setter.Value>
                 <PriorityBinding FallbackValue="Left"  >
-                    <Binding Path="(sbc:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Justification" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBTextAlignmentConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
@@ -162,7 +162,7 @@
         <Setter Property="Control.VerticalContentAlignment">
             <Setter.Value>
                 <PriorityBinding FallbackValue="Center"  >
-                    <Binding Path="(sbc:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBJustification)" Mode="TwoWay" Converter="{StaticResource SBTextAlignmentConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Justification" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBTextAlignmentConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
@@ -171,7 +171,7 @@
         <Setter Property="Control.FontFamily">
             <Setter.Value>
                 <PriorityBinding>
-                    <Binding Path="(sbc:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Family" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Family" />
                     <Binding Path="GuiObjectDefinition.Font" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Family" />
                     <Binding Path="SBPlus.DefaultFontFamily" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBUnsetValueConverter}" />
                 </PriorityBinding>
@@ -181,7 +181,7 @@
         <Setter Property="Control.FontSize">
             <Setter.Value>
                 <PriorityBinding>
-                    <Binding Path="(sbc:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Size" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Size" />
                     <Binding Path="GuiObjectDefinition.Font" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Size" />
                     <Binding Path="SBPlus.DefaultFontSize" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBUnsetValueConverter}" />
                 </PriorityBinding>
@@ -191,7 +191,7 @@
         <Setter Property="Control.FontWeight">
             <Setter.Value>
                 <PriorityBinding>
-                    <Binding Path="(sbc:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Weight" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Weight" />
                     <Binding Path="GuiObjectDefinition.Font" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Weight" />
                     <Binding Path="SBPlus.DefaultFontWeight" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBUnsetValueConverter}" />
                 </PriorityBinding>
@@ -201,25 +201,25 @@
         <Setter Property="Control.FontStyle">
             <Setter.Value>
                 <PriorityBinding>
-                    <Binding Path="(sbc:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Style" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Style" />
                     <Binding Path="GuiObjectDefinition.Font" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Style" />
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
         
-        <Setter Property="sbc:SBControl.TextDecorations">
+        <Setter Property="rkt:SBControl.TextDecorations">
             <Setter.Value>
                 <PriorityBinding>
-                    <Binding Path="(sbc:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Decorations" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBFont)" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Decorations" />
                     <Binding Path="GuiObjectDefinition.Font" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBFontConverter}" ConverterParameter="Decorations" />
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
 
-        <Setter Property="sbc:SBControl.IsEnabled">
+        <Setter Property="rkt:SBControl.IsEnabled">
             <Setter.Value>
                 <PriorityBinding FallbackValue="True">
-                    <Binding Path="(sbc:SBGUIAttribute.SBEmphasized)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBConverter}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBEmphasized)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBConverter}"/>
                     <Binding Path="GuiObjectDefinition.IsEmphasized" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" />
                 </PriorityBinding>
             </Setter.Value>
@@ -227,10 +227,10 @@
 
         <!-- IsEditable -->
         <!-- Created fallback so that both the value in the GUI object definition and the attribute are respected. (SBXA-3877, kp 1/27/11) -->
-        <Setter Property="sbc:SBControl.IsEditable">
+        <Setter Property="rkt:SBControl.IsEditable">
             <Setter.Value>
                 <PriorityBinding FallbackValue="True"  >
-                    <Binding Path="(sbc:SBGUIAttribute.SBEditable)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBConverter}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBEditable)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBConverter}"/>
                     <Binding Path="GuiObjectDefinition.Editable" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" />
                 </PriorityBinding>
             </Setter.Value>
@@ -239,7 +239,7 @@
         <Style.Triggers>
 
             <!-- If we are using character coloumn and row positioning, I need to set the margin to 0, so as to allow the grid row and column to position the field -->
-            <DataTrigger Binding="{Binding Path=(sbc:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay }" Value="false">
+            <DataTrigger Binding="{Binding Path=(rkt:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay }" Value="false">
                 <Setter Property="Control.Margin"       Value="0" />
                 <Setter Property="Control.Width"        Value="NaN"/>
                 <Setter Property="Control.Height"       Value="NaN"/>
@@ -247,11 +247,11 @@
                 <Setter Property="Control.VerticalAlignment"  Value="Stretch" />
             </DataTrigger>
             <!-- Use the margin from the GuiObjectDefinition to position the control. -->
-            <DataTrigger Binding="{Binding Path=(sbc:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay }" Value="true">
+            <DataTrigger Binding="{Binding Path=(rkt:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay }" Value="true">
                 <Setter Property="Control.Margin">
                     <Setter.Value>
                         <PriorityBinding>
-                            <Binding Path="(sbc:SBGUIAttribute.SBCoordinates)"
+                            <Binding Path="(rkt:SBGUIAttribute.SBCoordinates)"
                                      RelativeSource="{RelativeSource Mode=Self}" Mode="OneWay"
                                      Converter="{StaticResource SBCoordinatesToMarginConverter}" />
                             <Binding Path="GuiObjectDefinition.Margin"
@@ -264,7 +264,7 @@
                 <Setter Property="Control.Width">
                     <Setter.Value>
                         <PriorityBinding>
-                            <Binding Path="(sbc:SBGUIAttribute.SBDimensions)" Mode="OneWay" 
+                            <Binding Path="(rkt:SBGUIAttribute.SBDimensions)" Mode="OneWay" 
                              RelativeSource="{RelativeSource Mode=Self}"
                              Converter="{StaticResource SBDimensionsConverter}"
                              ConverterParameter="width" />
@@ -277,7 +277,7 @@
                 <Setter Property="Control.Height">
                     <Setter.Value>
                         <PriorityBinding>
-                            <Binding Path="(sbc:SBGUIAttribute.SBDimensions)" Mode="OneWay" 
+                            <Binding Path="(rkt:SBGUIAttribute.SBDimensions)" Mode="OneWay" 
                              RelativeSource="{RelativeSource Mode=Self}"
                              Converter="{StaticResource SBDimensionsConverter}"
                              ConverterParameter="height" />
@@ -291,7 +291,7 @@
             <!-- This trigger will check to see if the server is Dormant and if we should show the hour glass, if both are true then the cursor is change to the Wait cursor. -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <!--<Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static sbc:SBPlus.Current}}" Value="true" />-->
+                    <!--<Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static rkt:SBPlus.Current}}" Value="true" />-->
                     <Condition Binding="{Binding Path=SBPlus.ApplicationDefinition.IsHourGlassEnabled, RelativeSource={RelativeSource Mode=Self}}" Value="true" />
                     <Condition Binding="{Binding Path=SBPlus.InputState, RelativeSource={RelativeSource Mode=Self}}" Value="Dormant" />
                 </MultiDataTrigger.Conditions>
@@ -301,8 +301,8 @@
             <!-- Previously I used the following expression in the conditions, however this does not work in Blend 3 and appears to be a bug, as per --> 
             <!-- http://social.expression.microsoft.com/Forums/en/blend/thread/fe155fe7-a6f8-430a-8837-d28a748b8f03                                  -->
             <!--                                                                                                                                     -->
-            <!-- <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static sbc:SBPlus.Current}}" Value="true" />  -->
-            <!-- <Condition Binding="{Binding Path=InputState, Source={x:Static sbc:SBPlus.Current}}" Value="Dormant" />                             -->
+            <!-- <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static rkt:SBPlus.Current}}" Value="true" />  -->
+            <!-- <Condition Binding="{Binding Path=InputState, Source={x:Static rkt:SBPlus.Current}}" Value="Dormant" />                             -->
             <!--                                                                                                                                     -->
             <!-- This trigger will check to see if the client is busy and if we should show the hour glass, if both are true then the cursor is change to the Wait cursor. -->
             <MultiDataTrigger>
@@ -318,23 +318,23 @@
                 <Setter Property="FrameworkElement.ToolTip" Value="{Binding Path=GuiObjectDefinition.HelpString, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
             </DataTrigger-->
             
-            <DataTrigger Binding="{Binding Path=(sbc:SBGUIAttribute.SBHelpString), RelativeSource={RelativeSource Mode=Self}, Mode=OneWay, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="false">
-                <Setter Property="FrameworkElement.ToolTip" Value="{Binding Path=(sbc:SBGUIAttribute.SBHelpString), RelativeSource={RelativeSource Mode=Self}, Mode=OneWay, Converter={StaticResource SBConverter}}" />
+            <DataTrigger Binding="{Binding Path=(rkt:SBGUIAttribute.SBHelpString), RelativeSource={RelativeSource Mode=Self}, Mode=OneWay, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="false">
+                <Setter Property="FrameworkElement.ToolTip" Value="{Binding Path=(rkt:SBGUIAttribute.SBHelpString), RelativeSource={RelativeSource Mode=Self}, Mode=OneWay, Converter={StaticResource SBConverter}}" />
             </DataTrigger>
 
             <!-- Make sure I only set the Style if there is one in the GuiObjectDefinition to set, otherwise we get all sorts of un-required sets and we lose the fallback priorities eCase 41516*USA -->
             <DataTrigger Binding="{Binding Path=GuiObjectDefinition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="false">
-                <Setter Property="sbc:SBGUIAttribute.SBStyleName" Value="{Binding Path=GuiObjectDefinition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+                <Setter Property="rkt:SBGUIAttribute.SBStyleName" Value="{Binding Path=GuiObjectDefinition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
             </DataTrigger>
 
 
             <DataTrigger Binding="{Binding Path=Collapsed, RelativeSource={RelativeSource Mode=Self}}" Value="False">
-                <Setter Property="sbc:SBControl.Visibility" Value="{Binding Path=(sbc:SBGUIAttribute.SBDrawable), RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay, Converter={StaticResource SBDrawableConverter}}"/>
+                <Setter Property="rkt:SBControl.Visibility" Value="{Binding Path=(rkt:SBGUIAttribute.SBDrawable), RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay, Converter={StaticResource SBDrawableConverter}}"/>
             </DataTrigger>
 
             <DataTrigger Binding="{Binding Path=Collapsed, RelativeSource={RelativeSource Mode=Self}}" Value="True">
-                <Setter Property="sbc:SBGUIAttribute.SBDrawable" Value="0" />
-                <Setter Property="sbc:SBControl.Visibility" Value="Collapsed"/>                
+                <Setter Property="rkt:SBGUIAttribute.SBDrawable" Value="0" />
+                <Setter Property="rkt:SBControl.Visibility" Value="Collapsed"/>                
             </DataTrigger>
 
             <DataTrigger Binding="{Binding Path=GuiObjectDefinition.IsOutsideForm, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" Value="True">

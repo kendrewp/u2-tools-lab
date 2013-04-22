@@ -12,7 +12,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbe="clr-namespace:SBXA.Controls;assembly=SBXAEditor"
 >
 
@@ -20,12 +20,12 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBFormStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="BaseXEStyle" TargetType="{x:Type sbc:XE}" BasedOn="{StaticResource BaseSBFormStyle}">
-        <Setter Property="sbc:SBControl.ShouldSendSBCommands" Value="False" />
+    <Style x:Key="BaseXEStyle" TargetType="{x:Type rkt:XE}" BasedOn="{StaticResource BaseSBFormStyle}">
+        <Setter Property="rkt:SBControl.ShouldSendSBCommands" Value="False" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="sbc:SBControl.SBControlStyle" Value="{DynamicResource SBEditorStyle}" />
-        <Setter Property="sbc:SBControl.SBFocusControlStyle" Value="{DynamicResource SBEditorStyle}" />
-        <Setter Property="sbc:SBUISupport.ZoomValue" Value="{Binding Path=(sbc:SBUISupport.ZoomValue), Source={x:Static sbc:SBPlus.Current}}" />
+        <Setter Property="rkt:SBControl.SBControlStyle" Value="{DynamicResource SBEditorStyle}" />
+        <Setter Property="rkt:SBControl.SBFocusControlStyle" Value="{DynamicResource SBEditorStyle}" />
+        <Setter Property="rkt:SBUISupport.ZoomValue" Value="{Binding Path=(rkt:SBUISupport.ZoomValue), Source={x:Static rkt:SBPlus.Current}}" />
 
         <Style.Triggers>
 
@@ -33,10 +33,10 @@
 
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type sbc:XE}">
+                        <ControlTemplate TargetType="{x:Type rkt:XE}">
                             <ContentControl>
                                 <ContentControl.InputBindings>
-                                    <KeyBinding Command="sbc:SBCommands.SBCloseWindowCommand"
+                                    <KeyBinding Command="rkt:SBCommands.SBCloseWindowCommand"
                                                 Key="ESC"/>
                                 </ContentControl.InputBindings>
                                 
@@ -62,8 +62,8 @@
                                 <MenuItem Header="_New" Command="New"/>
                                 <MenuItem Header="_Open" Command="Open"/>
 -->
-                                                    <MenuItem Header="_Save" Command="sbc:SBCommands.SBWriteCommand"/>
-                                                    <MenuItem Header="_Exit" Command="sbc:SBCommands.SBCloseWindowCommand"/>
+                                                    <MenuItem Header="_Save" Command="rkt:SBCommands.SBWriteCommand"/>
+                                                    <MenuItem Header="_Exit" Command="rkt:SBCommands.SBCloseWindowCommand"/>
                                                     <!--                                <Separator/>
                                 <MenuItem Name ="_Basic" Header ="_Basic" Click="Basic_Click"  IsChecked ="True"/>
                                 <MenuItem Name ="_Paragraph" Header="_Paragraph" Click="Paragraph_Click"/>
@@ -81,10 +81,10 @@
                                                     <MenuItem Header ="_Replace..." Command="Replace"/>
                                                     <Separator />
                                                     <MenuItem Header ="_Goto Line..."
-                                                          Command="sbe:SBEditor.GotoLineCommand"
+                                                          Command="rkt:SBEditor.GotoLineCommand"
                                                           InputGestureText="Ctrl+G"/>
                                                     <MenuItem Header ="_Edit Values..."
-                                                          Command="sbe:SBEditor.EditValuesCommand"
+                                                          Command="rkt:SBEditor.EditValuesCommand"
                                                           InputGestureText="Ctrl+E"/>
                                                 </MenuItem>
                                                 <MenuItem Header ="_View">
@@ -92,7 +92,7 @@
                                                     <MenuItem Name ="_Unprintable" Header ="Show _Unprintable" IsCheckable="True" IsChecked="True"/>
                                                 </MenuItem>
                                                 <MenuItem Header="_Tools">
-                                                    <MenuItem Header="_Compile" Command="sbc:SBCommands.SBCompileCommand" />
+                                                    <MenuItem Header="_Compile" Command="rkt:SBCommands.SBCompileCommand" />
                                                 </MenuItem>
                                             </Menu>
                                             <Grid>
@@ -102,7 +102,7 @@
                                                         <Setter Property="Grid.Width" Value="800" />
                                                         <Setter Property="Grid.Height" Value="600" />
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+                                                            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                              Value="Manual">
                                                                 <Setter Property="Grid.Width" Value="NaN" />
                                                                 <Setter Property="Grid.Height" Value="NaN" />
@@ -114,8 +114,8 @@
                                                     <ScaleTransform x:Name="PART_SBFormScaleTransform" 
                                                 CenterX="0"
                                                 CenterY="0"
-                                                ScaleX="{Binding Path=(sbc:SBUISupport.ZoomValue), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm} }}"
-                                                ScaleY="{Binding Path=(sbc:SBUISupport.ZoomValue), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm} }}"
+                                                ScaleX="{Binding Path=(rkt:SBUISupport.ZoomValue), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm} }}"
+                                                ScaleY="{Binding Path=(rkt:SBUISupport.ZoomValue), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm} }}"
                                                 />
                                                 </Grid.LayoutTransform>
 
@@ -124,8 +124,8 @@
                                                     <RowDefinition />
                                                     <RowDefinition Height="64"/>
                                                 </Grid.RowDefinitions>
-                                                <sbe:SBEditor x:Name="PART_SBEditor" Grid.Row="0" Padding="5" 
-                                                    Style="{Binding Path=(sbc:SBControl.SBControlStyle), RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                                <rkt:SBEditor x:Name="PART_SBEditor" Grid.Row="0" Padding="5" 
+                                                    Style="{Binding Path=(rkt:SBControl.SBControlStyle), RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                                     ShowLineNumbers="{Binding ElementName=_LineNumbers, Path=IsChecked}"
                                                     ShowUnprintable="{Binding ElementName=_Unprintable, Path=IsChecked}"
                                                 />

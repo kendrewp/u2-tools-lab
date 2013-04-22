@@ -11,7 +11,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls">
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/SbControl.xaml" />
@@ -20,8 +20,8 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/NoFocusContextMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBRadio}" x:Key="BaseSBRadioStyle" BasedOn="{StaticResource BaseSBControlStyle}" >
-        <Setter Property="sbc:SBUISupport.StyleName" Value="Implicit Style" />
+    <Style TargetType="{x:Type rkt:SBRadio}" x:Key="BaseSBRadioStyle" BasedOn="{StaticResource BaseSBControlStyle}" >
+        <Setter Property="rkt:SBUISupport.StyleName" Value="Implicit Style" />
     </Style>
 
 </ResourceDictionary>

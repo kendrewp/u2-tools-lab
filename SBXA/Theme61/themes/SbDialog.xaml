@@ -10,7 +10,7 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
                     xmlns:sbe="clr-namespace:SBXA.UI.WPFControls.MarkupExtensions"
                     >
@@ -18,6 +18,6 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBDialogStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource BaseSBDialogStyle}" TargetType="{x:Type sbc:SBDialog}" />
+    <Style BasedOn="{StaticResource BaseSBDialogStyle}" TargetType="{x:Type rkt:SBDialog}" />
 
 </ResourceDictionary>

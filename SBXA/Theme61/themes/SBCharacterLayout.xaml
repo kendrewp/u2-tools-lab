@@ -11,7 +11,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
 
@@ -23,6 +23,6 @@
 
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBCharacterLayout}" BasedOn="{StaticResource BaseSBCharacterLayout}" />
+    <Style TargetType="{x:Type rkt:SBCharacterLayout}" BasedOn="{StaticResource BaseSBCharacterLayout}" />
 
 </ResourceDictionary>

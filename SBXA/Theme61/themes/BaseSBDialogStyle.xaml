@@ -10,7 +10,7 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     >
     
     <ResourceDictionary.MergedDictionaries>
@@ -18,7 +18,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!-- DialogWithTextAndPrompt -->
-    <ControlTemplate x:Key="DialogWithTextAndPrompt" TargetType="{x:Type sbc:SBDialog}">
+    <ControlTemplate x:Key="DialogWithTextAndPrompt" TargetType="{x:Type rkt:SBDialog}">
             <ContentControl x:Name="SBDialogContentControl"
                             Grid.Row="1" 
                             Grid.Column="1" 
@@ -26,9 +26,9 @@
                             Template="{DynamicResource SBFormWithBorderTemplate}"
                             >
                 <ContentControl.InputBindings>
-                    <KeyBinding Command="sbc:SBCommands.SBSaveCommand"
+                    <KeyBinding Command="rkt:SBCommands.SBSaveCommand"
                       Key="F2" />
-                    <KeyBinding Command="sbc:SBCommands.SBIntuitiveHelpCommand"
+                    <KeyBinding Command="rkt:SBCommands.SBIntuitiveHelpCommand"
                       Key="F3" />
                 </ContentControl.InputBindings>
                 <Grid x:Name="PART_SBDialogGrid" Margin="10,10,10,10">
@@ -42,7 +42,7 @@
                         <ColumnDefinition  Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <sbc:SBPrompt Grid.Row="0" 
+                    <rkt:SBPrompt Grid.Row="0" 
                                   Margin="1,1,1,1" 
                                   HorizontalContentAlignment="Center"
                                   Grid.Column="0" 
@@ -52,23 +52,23 @@
                                   />
 
 
-                    <sbc:SBPrompt Margin="1,1,1,1" 
+                    <rkt:SBPrompt Margin="1,1,1,1" 
                                   Grid.Row="1" 
                                   Grid.Column="0" 
                                   Focusable="False"
                                   SBValue="{Binding Path=DialogDefinition.PromptText, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" 
                                   />
 
-                    <sbc:SBField TabIndex="0" Margin="1,1,1,1" Grid.Row="1" Grid.Column="1" 
-                                 UsePixelPositioning="{Binding Path=(sbc:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"  
+                    <rkt:SBField TabIndex="0" Margin="1,1,1,1" Grid.Row="1" Grid.Column="1" 
+                                 UsePixelPositioning="{Binding Path=(rkt:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"  
                                  SBValue="{Binding Path=SBValue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
                                  Width="{Binding Path=TextDimensions.Width, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"
                                  CursorPosition="{Binding Path=CursorPosition, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=TwoWay}"
                                  NoEcho="{Binding Path=DialogDefinition.NoEcho, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"
-                                 sbc:SBControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                 rkt:SBControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                 />
 
-                    <sbc:SBButtonBar Grid.Column="0" 
+                    <rkt:SBButtonBar Grid.Column="0" 
                                      Grid.Row="2" 
                                      Grid.ColumnSpan="2" 
                                      Margin="0,5,0,0"
@@ -82,7 +82,7 @@
     </ControlTemplate>
 
     <!-- DialogWithPrompt -->
-    <ControlTemplate x:Key="DialogWithPrompt" TargetType="{x:Type sbc:SBDialog}">
+    <ControlTemplate x:Key="DialogWithPrompt" TargetType="{x:Type rkt:SBDialog}">
             <ContentControl x:Name="SBDialogContentControl"
                             Grid.Row="1" 
                             Grid.Column="1" 
@@ -90,9 +90,9 @@
                             Template="{DynamicResource SBFormWithBorderTemplate}"
                             >
                 <ContentControl.InputBindings>
-                    <KeyBinding Command="sbc:SBCommands.SBSaveCommand"
+                    <KeyBinding Command="rkt:SBCommands.SBSaveCommand"
                       Key="F2" />
-                    <KeyBinding Command="sbc:SBCommands.SBIntuitiveHelpCommand"
+                    <KeyBinding Command="rkt:SBCommands.SBIntuitiveHelpCommand"
                       Key="F3" />
                 </ContentControl.InputBindings>
                 <Grid x:Name="PART_SBDialogGrid" Margin="5">
@@ -105,30 +105,30 @@
                         <ColumnDefinition  Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <sbc:SBPrompt Margin="1" 
+                    <rkt:SBPrompt Margin="1" 
                                   Grid.Row="0" 
                                   Grid.Column="0" 
                                   Focusable="False"
                                   SBValue="{Binding Path=DialogDefinition.PromptText, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
 
-                    <sbc:SBField TabIndex="0" Margin="1" Grid.Row="0" Grid.Column="1" 
-                                 UsePixelPositioning="{Binding Path=(sbc:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"  
+                    <rkt:SBField TabIndex="0" Margin="1" Grid.Row="0" Grid.Column="1" 
+                                 UsePixelPositioning="{Binding Path=(rkt:SBControl.UsePixelPositioning), RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"  
                                  SBValue="{Binding Path=SBValue, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
                                  Width="{Binding Path=TextDimensions.Width, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"
                                  CursorPosition="{Binding Path=CursorPosition, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=TwoWay}"
                                  NoEcho="{Binding Path=DialogDefinition.NoEcho, RelativeSource={RelativeSource Mode=TemplatedParent }, Mode=OneWay}"
-                                 sbc:SBControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
-                                 sbc:SBGUIAttribute.SBParentObjectName="{Binding Path=SBObjectName, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                 rkt:SBControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                 rkt:SBGUIAttribute.SBParentObjectName="{Binding Path=SBObjectName, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                 >
-                        <sbc:SBGUIAttribute.SBObjectName>
+                        <rkt:SBGUIAttribute.SBObjectName>
                             <MultiBinding Converter="{StaticResource SBConcatenateConverter}" ConverterParameter="*">
                                 <Binding Path="SBObjectName" RelativeSource="{RelativeSource TemplatedParent}"/>
                                 <Binding Path="DependencyProperty.UnsetValue" FallbackValue="0" />
                                 <Binding Path="GuiObjectDefinition.Row" FallbackValue="0" />
                             </MultiBinding>
-                        </sbc:SBGUIAttribute.SBObjectName>
-                    </sbc:SBField>
-                    <sbc:SBButtonBar Grid.Column="0" 
+                        </rkt:SBGUIAttribute.SBObjectName>
+                    </rkt:SBField>
+                    <rkt:SBButtonBar Grid.Column="0" 
                                      Grid.Row="2" 
                                      Grid.ColumnSpan="2" 
                                      Margin="0,10,0,0"
@@ -142,7 +142,7 @@
     </ControlTemplate>
 
     <!-- DialogWithNoTextOrPrompt -->
-    <ControlTemplate x:Key="DialogWithNoTextOrPrompt" TargetType="{x:Type sbc:SBDialog}">
+    <ControlTemplate x:Key="DialogWithNoTextOrPrompt" TargetType="{x:Type rkt:SBDialog}">
             <ContentControl x:Name="SBDialogContentControl"
                             Grid.Row="1" 
                             Grid.Column="1" 
@@ -150,8 +150,8 @@
                             Template="{DynamicResource SBFormWithBorderTemplate}"
                             >
                 <ContentControl.InputBindings>
-                    <KeyBinding Command="sbc:SBCommands.SBSaveCommand" Key="F2" />
-                    <KeyBinding Command="sbc:SBCommands.SBIntuitiveHelpCommand" Key="F3" />
+                    <KeyBinding Command="rkt:SBCommands.SBSaveCommand" Key="F2" />
+                    <KeyBinding Command="rkt:SBCommands.SBIntuitiveHelpCommand" Key="F3" />
                 </ContentControl.InputBindings>
                 <Grid Margin="5,5,5,5">
 
@@ -186,17 +186,17 @@
                             <ColumnDefinition  Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <sbc:SBPrompt Grid.Column="0" 
+                        <rkt:SBPrompt Grid.Column="0" 
                                       Grid.Row="0" 
                                       HorizontalContentAlignment="Center" 
                                       Margin="1,1,1,1"  
                                       Focusable="False"
                                       SBValue="{Binding Path=DialogDefinition.DialogText, RelativeSource={RelativeSource TemplatedParent}}" />
 
-                        <sbc:SBToggle x:Name="PART_SBToggle" 
+                        <rkt:SBToggle x:Name="PART_SBToggle" 
                                       Grid.Column="0" 
                                       Grid.Row="1" 
-                                      sbc:SBControl.ShouldSendSBCommands="false"
+                                      rkt:SBControl.ShouldSendSBCommands="false"
                                       HorizontalAlignment="Center"
                                       Label="{Binding Path=DialogDefinition.CheckBoxlabel, RelativeSource={RelativeSource TemplatedParent}}" 
                                       Visibility="Hidden"
@@ -205,7 +205,7 @@
                                       />
                     </Grid>
                     
-                    <sbc:SBButtonBar Grid.Column="0" 
+                    <rkt:SBButtonBar Grid.Column="0" 
                                      Grid.Row="1" 
                                      Grid.ColumnSpan="2"
                                      SendResponse="False"
@@ -213,7 +213,7 @@
                                      UniformButtonSize="True"
                                      ButtonAlignment="Center"
                                      Buttons="{Binding Path=DialogDefinition.Buttons, RelativeSource={RelativeSource TemplatedParent}}"
-                                     sbc:SBContentControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                     rkt:SBContentControl.HasSBFocus="{Binding Path=IsSBFocused, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                      Focusable="False"
                                      />
 
@@ -232,7 +232,7 @@
                     <Setter.Value>
                         <ControlTemplate>
                             <Image 
-                           Source="{Binding Path=DialogDefinition.Image, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBDialog}}, Mode=OneWay, Converter={StaticResource SBConverter}}"  
+                           Source="{Binding Path=DialogDefinition.Image, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBDialog}}, Mode=OneWay, Converter={StaticResource SBConverter}}"  
                            HorizontalAlignment="Center"
                            />
                         </ControlTemplate>
@@ -286,11 +286,11 @@
         
     </ControlTemplate>
 
-    <Style x:Key="BaseSBDialogStyle" BasedOn="{StaticResource BaseSBFormStyle}" TargetType="{x:Type sbc:SBDialog}" >
-        <Setter Property="sbc:SBUISupport.StyleName" Value="BaseSBDialogStyle" />
-        <Setter Property="sbc:SBPlus.CloseOpenDialog" Value="{Binding Path=ShouldExit, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+    <Style x:Key="BaseSBDialogStyle" BasedOn="{StaticResource BaseSBFormStyle}" TargetType="{x:Type rkt:SBDialog}" >
+        <Setter Property="rkt:SBUISupport.StyleName" Value="BaseSBDialogStyle" />
+        <Setter Property="rkt:SBPlus.CloseOpenDialog" Value="{Binding Path=ShouldExit, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="sbc:SBForm.IsClosable" Value="{Binding Path=DialogDefinition.AllowEscape, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}"/>
+        <Setter Property="rkt:SBForm.IsClosable" Value="{Binding Path=DialogDefinition.AllowEscape, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}"/>
         <Setter Property="IsCachable" Value="False" />
         <Setter Property="CanHostStatusBar" Value="False" />
 
@@ -303,7 +303,7 @@
                     <Condition Binding="{Binding Path=WillSendSBCommands, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay }" Value="true"/>
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource DialogWithTextAndPrompt}"/>
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="DialogWithTextAndPrompt" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="DialogWithTextAndPrompt" />
             </MultiDataTrigger>
 
             <MultiDataTrigger>
@@ -312,7 +312,7 @@
                     <Condition Binding="{Binding Path=WillSendSBCommands, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay }" Value="true"/>
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource DialogWithPrompt}"/>
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="DialogWithPrompt" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="DialogWithPrompt" />
             </MultiDataTrigger>
 
             <!-- This trigger checks to see if the user must enter text or not and is used if there is no text to enter. -->
@@ -323,7 +323,7 @@
                 </MultiDataTrigger.Conditions>
 
                 <Setter Property="Template" Value="{StaticResource DialogWithNoTextOrPrompt}"/>
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="DialogWithNoTextOrPrompt" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="DialogWithNoTextOrPrompt" />
 
             </MultiDataTrigger>
 

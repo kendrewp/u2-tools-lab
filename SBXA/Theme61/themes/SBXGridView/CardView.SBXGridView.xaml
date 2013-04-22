@@ -1,7 +1,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sbx="clr-namespace:SBXA.UI.WPFControls.SBXceed"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     xmlns:sbe="clr-namespace:SBXA.UI.WPFControls.MarkupExtensions"
                     xmlns:sbs="http://schemas.sbxa.com/Shared"
                     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
@@ -670,99 +670,99 @@
    <!-- DefaultStyleKey declarations                                        -->
    <!-- =================================================================== -->
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme}"
           TargetType="xcdg:CardView"
           BasedOn="{StaticResource cardViewSBXGridViewDefaultValues}" />
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
           TargetType="xcdg:DataGridControl"
           BasedOn="{StaticResource cardViewSBXGridViewGridControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Row}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Row}"
           TargetType="xcdg:Row"
           BasedOn="{StaticResource cardViewSBXGridViewRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
           TargetType="xcdg:DataRow"
           BasedOn="{StaticResource cardViewSBXGridViewDataRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:InsertionRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:InsertionRow}"
           TargetType="xcdg:InsertionRow"
           BasedOn="{StaticResource cardViewSBXGridViewInsertionRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerRow}"
           TargetType="xcdg:ColumnManagerRow"
           BasedOn="{StaticResource cardViewSBXGridViewColumnManagerRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:StatRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:StatRow}"
           TargetType="xcdg:StatRow"
           BasedOn="{StaticResource cardViewSBXGridViewStatRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:FilterRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:FilterRow}"
           TargetType="xcdg:FilterRow"
           BasedOn="{StaticResource cardViewSBXGridViewFilterRowStyle}" />
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
           TargetType="xcdg:Cell"
           BasedOn="{StaticResource cardViewSBXGridViewCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
           TargetType="xcdg:DataCell"
           BasedOn="{StaticResource cardViewSBXGridViewDataCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:InsertionCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:InsertionCell}"
           TargetType="xcdg:InsertionCell"
           BasedOn="{StaticResource cardViewSBXGridViewInsertionCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerCell}"
           TargetType="xcdg:ColumnManagerCell"
           BasedOn="{StaticResource cardViewSBXGridViewColumnManagerCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:StatCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:StatCell}"
           TargetType="xcdg:StatCell"
           BasedOn="{StaticResource cardViewSBXGridViewStatCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:FilterCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:FilterCell}"
           TargetType="xcdg:FilterCell"
           BasedOn="{StaticResource cardViewSBXGridViewFilterCellStyle}" />
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupByControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupByControl}"
           TargetType="xcdg:GroupByControl"
           BasedOn="{StaticResource cardViewSBXGridViewGroupByControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupByItem}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupByItem}"
           TargetType="xcdg:GroupByItem"
           BasedOn="{StaticResource cardViewSBXGridViewGroupByItemStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
           TargetType="xcdg:GroupHeaderControl"
           BasedOn="{StaticResource cardViewSBXGridViewGroupHeaderControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicator}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicator}"
           TargetType="xcdg:GroupLevelIndicator"
           BasedOn="{StaticResource cardViewSBXGridViewGroupLevelIndicatorStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DetailIndicator}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DetailIndicator}"
           TargetType="xcdg:DetailIndicator"
           BasedOn="{StaticResource cardViewSBXGridViewDetailIndicatorStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicatorPane}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicatorPane}"
           TargetType="xcdg:GroupLevelIndicatorPane"
           BasedOn="{StaticResource cardViewSBXGridViewGroupLevelIndicatorPaneStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupLevelIndicatorPane}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupLevelIndicatorPane}"
           TargetType="xcdg:HierarchicalGroupLevelIndicatorPane"
           BasedOn="{StaticResource cardViewSBXGridViewHierarchicalGroupLevelIndicatorPaneStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:AutoFilterControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:AutoFilterControl}"
           TargetType="xcdg:AutoFilterControl"
           BasedOn="{StaticResource cardViewSBXGridViewAutoFilterControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
           TargetType="xcdg:ScrollTip"
           BasedOn="{StaticResource cardViewSBXGridViewScrollTipStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControl}"
           TargetType="xcdg:HierarchicalGroupByControl"
           BasedOn="{StaticResource cardViewSBXGridViewHierarchicalGroupByControlStyle}"/>
 

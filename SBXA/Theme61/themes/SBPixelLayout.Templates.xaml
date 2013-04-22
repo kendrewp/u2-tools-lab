@@ -10,7 +10,7 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     >
 
     <ItemsPanelTemplate x:Key="SBPixelLayoutItemsPanelTemplate">
@@ -18,7 +18,7 @@
               Margin="6.5"   
               VerticalAlignment="Top"
               HorizontalAlignment="Left"
-              sbc:SBUISupport.TemplateName="SBPixelLayoutItemsPanelTemplate"
+              rkt:SBUISupport.TemplateName="SBPixelLayoutItemsPanelTemplate"
               ShowGridLines="True" 
               />
     </ItemsPanelTemplate>
@@ -28,15 +28,15 @@
               Margin="6.5"   
               VerticalAlignment="Top"
               HorizontalAlignment="Left"
-              sbc:SBUISupport.TemplateName="SBPreRunPixelLayoutItemsPanelTemplate"
+              rkt:SBUISupport.TemplateName="SBPreRunPixelLayoutItemsPanelTemplate"
               ShowGridLines="False" 
-              sbc:SBPixelLayout.LayoutGridColumns="{Binding Path=ColumnCount, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPixelLayout}}}"
-              sbc:SBPixelLayout.LayoutGridRows="{Binding Path=RowCount, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPixelLayout}}}"
+              rkt:SBPixelLayout.LayoutGridColumns="{Binding Path=ColumnCount, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPixelLayout}}}"
+              rkt:SBPixelLayout.LayoutGridRows="{Binding Path=RowCount, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPixelLayout}}}"
               />
     </ItemsPanelTemplate>
 
     <ControlTemplate x:Key="SBPixelLayoutItemsControlTemplate" TargetType="ItemsControl">
-        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" sbc:SBUISupport.TemplateName="SBPixelLayoutItemsControlTemplate"/>
+        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" rkt:SBUISupport.TemplateName="SBPixelLayoutItemsControlTemplate"/>
     </ControlTemplate>
 
 </ResourceDictionary>

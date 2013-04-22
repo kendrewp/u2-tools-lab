@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:wsd="clr-namespace:System.Windows.Documents;assembly=PresentationUI"
     >
@@ -67,9 +67,9 @@
                             <ToolBar
               ToolBarTray.IsLocked="True" 
               KeyboardNavigation.TabNavigation="Continue">
-                                <Button Command="sbc:SBXPSViewerCommands.SBXPSViewerCancelCommand"                 
+                                <Button Command="rkt:SBXPSViewerCommands.SBXPSViewerCancelCommand"                 
                 Content="Cancel"/>
-                                <Button Command="sbc:SBXPSViewerCommands.SBXPSViewerSBProcessCommand"                 
+                                <Button Command="rkt:SBXPSViewerCommands.SBXPSViewerSBProcessCommand"                 
                 Content="Call SB Process"/>                                
                                 <Button Command="ApplicationCommands.Copy" 
                 CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
@@ -323,19 +323,19 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="BaseSBXPSViewerStyle" BasedOn="{StaticResource BaseSBFormStyle}" TargetType="{x:Type sbc:SBXPSViewer}" >
-        <Setter Property="sbc:SBControl.ShouldSendSBCommands" Value="False" />
+    <Style x:Key="BaseSBXPSViewerStyle" BasedOn="{StaticResource BaseSBFormStyle}" TargetType="{x:Type rkt:SBXPSViewer}" >
+        <Setter Property="rkt:SBControl.ShouldSendSBCommands" Value="False" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="sbc:SBForm.IsMaximizable" Value="True"/>
-        <Setter Property="sbc:SBForm.IsMinimizable" Value="True"/>
+        <Setter Property="rkt:SBForm.IsMaximizable" Value="True"/>
+        <Setter Property="rkt:SBForm.IsMinimizable" Value="True"/>
         <!-- XPS Viewer has it's own zoom so ensure SB Zoom isn't used as well -->
-        <Setter Property="sbc:SBUISupport.ZoomValue" Value="1.0" />
+        <Setter Property="rkt:SBUISupport.ZoomValue" Value="1.0" />
         <Setter Property="Width" Value="800" />
         <Setter Property="Height" Value="600" />
 
         <Style.Triggers>
 
-            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                              Value="Manual">
                 <Setter Property="Width" Value="NaN" />
                 <Setter Property="Height" Value="NaN" />
@@ -344,7 +344,7 @@
             <DataTrigger Binding="{Binding Path=WillSendSBCommands, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay }" Value="false">
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type sbc:SBXPSViewer}">
+                        <ControlTemplate TargetType="{x:Type rkt:SBXPSViewer}">
                             <ContentControl>
                                 <!-- Header duplicated from BaseSBFormStyle -->
                                 <Grid KeyboardNavigation.IsTabStop="False">
@@ -364,12 +364,12 @@
                                         <DockPanel LastChildFill="True">
                                             <Menu DockPanel.Dock="Top">
                                                 <MenuItem Header="_File">
-                                                    <MenuItem Header="_Save    F2" Command="sbc:SBXPSViewerCommands.SBXPSViewerSaveCommand"/>
-                                                    <MenuItem Header="_Print   F4" Command="sbc:SBXPSViewerCommands.SBXPSViewerPrintCommand"/>
-                                                    <MenuItem Header="E-_mail..." Command="sbc:SBXPSViewerCommands.SBXPSViewerEmailCommand" />
-                                                    <MenuItem Header="Export To _Word" Command="sbc:SBXPSViewerCommands.SBXPSViewerToWordCommand" />
-                                                    <MenuItem Header="Export To _Text..." Command="sbc:SBXPSViewerCommands.SBXPSViewerToTextCommand" />
-                                                    <MenuItem Header="_Exit    CTRL-X" Command="sbc:SBXPSViewerCommands.SBXPSViewerCloseCommand"/>
+                                                    <MenuItem Header="_Save    F2" Command="rkt:SBXPSViewerCommands.SBXPSViewerSaveCommand"/>
+                                                    <MenuItem Header="_Print   F4" Command="rkt:SBXPSViewerCommands.SBXPSViewerPrintCommand"/>
+                                                    <MenuItem Header="E-_mail..." Command="rkt:SBXPSViewerCommands.SBXPSViewerEmailCommand" />
+                                                    <MenuItem Header="Export To _Word" Command="rkt:SBXPSViewerCommands.SBXPSViewerToWordCommand" />
+                                                    <MenuItem Header="Export To _Text..." Command="rkt:SBXPSViewerCommands.SBXPSViewerToTextCommand" />
+                                                    <MenuItem Header="_Exit    CTRL-X" Command="rkt:SBXPSViewerCommands.SBXPSViewerCloseCommand"/>
                                                 </MenuItem>
                                             </Menu>
 
@@ -394,17 +394,17 @@
                                     </Border>
                                 </Grid>
                                 <ContentControl.InputBindings>
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerCloseCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerCloseCommand"
                                                 Key="Escape"/>                                    
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerSaveCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerSaveCommand"
                                                 Key="F2"/>
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerPrintCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerPrintCommand"
                                                 Key="F4"/>
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerSBProcessCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerSBProcessCommand"
                                                 Key="F5"/>
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerCancelCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerCancelCommand"
                                                 Key="F6"/>
-                                    <KeyBinding Command="sbc:SBXPSViewerCommands.SBXPSViewerCloseCommand"
+                                    <KeyBinding Command="rkt:SBXPSViewerCommands.SBXPSViewerCloseCommand"
                                                 Key="X"
                                                 Modifiers="Control"/>
                                 </ContentControl.InputBindings>

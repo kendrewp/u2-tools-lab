@@ -15,9 +15,7 @@
 <ResourceDictionary x:Class="SBXA.UI.WPFControls.VanillaSBPlusTheme"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
-                    xmlns:sbe="http://schemas.sbxa.com/WPFControls"
-                    xmlns:sbx="clr-namespace:SBXA.UI.WPFControls.SBXceed"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
                     >
     
@@ -45,7 +43,7 @@
                         <Grid Focusable="False" Width="640" Height="480">
                             <Grid.Background>
                                 <PriorityBinding FallbackValue="{x:Static SystemColors.WindowBrush}">
-                                    <Binding Path="(sbc:SBGUIAttribute.SBBackground)" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus}}" Mode="OneWay" />
+                                    <Binding Path="(rkt:SBGUIAttribute.SBBackground)" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus}}" Mode="OneWay" />
                                 </PriorityBinding>
                             </Grid.Background>
                         </Grid>

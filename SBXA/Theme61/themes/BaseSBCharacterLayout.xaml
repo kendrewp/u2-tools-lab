@@ -11,7 +11,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     >
 
     <ResourceDictionary.MergedDictionaries>
@@ -23,105 +23,105 @@
 
     <Style x:Key="SBCharacterLayoutItemContainerStyle"/>
 
-    <Style TargetType="{x:Type sbc:SBCharacterLayout}" x:Key="BaseSBCharacterLayout" >
-        <Setter Property="sbc:SBItemsControl.ItemsPanelTemplate" Value="{DynamicResource SBCharacterLayoutItemsPanelTemplate}"/>
-        <Setter Property="sbc:SBItemsControl.ItemContainerStyle" Value="{DynamicResource SBCharacterLayoutItemContainerStyle}"/>
-        <Setter Property="sbc:SBItemsControl.Template" Value="{DynamicResource SBCharacterLayoutItemsControlTemplate}"/>
-        <Setter Property="sbc:SBControl.ShouldSendSBCommands" Value="True"/>
+    <Style TargetType="{x:Type rkt:SBCharacterLayout}" x:Key="BaseSBCharacterLayout" >
+        <Setter Property="rkt:SBItemsControl.ItemsPanelTemplate" Value="{DynamicResource SBCharacterLayoutItemsPanelTemplate}"/>
+        <Setter Property="rkt:SBItemsControl.ItemContainerStyle" Value="{DynamicResource SBCharacterLayoutItemContainerStyle}"/>
+        <Setter Property="rkt:SBItemsControl.Template" Value="{DynamicResource SBCharacterLayoutItemsControlTemplate}"/>
+        <Setter Property="rkt:SBControl.ShouldSendSBCommands" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type sbc:SBCharacterLayout}">
+                <ControlTemplate TargetType="{x:Type rkt:SBCharacterLayout}">
                     <ItemsControl ItemsSource="{TemplateBinding ItemsSource}" 
-                                  Template="{Binding Path=(sbc:SBItemsControl.Template), RelativeSource={RelativeSource TemplatedParent}}"
-                                  ItemContainerStyle="{Binding Path=(sbc:SBItemsControl.ItemContainerStyle), RelativeSource={RelativeSource TemplatedParent}}"
-                                  ItemsPanel="{Binding Path=(sbc:SBItemsControl.ItemsPanelTemplate), RelativeSource={RelativeSource TemplatedParent}}"
+                                  Template="{Binding Path=(rkt:SBItemsControl.Template), RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemContainerStyle="{Binding Path=(rkt:SBItemsControl.ItemContainerStyle), RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemsPanel="{Binding Path=(rkt:SBItemsControl.ItemsPanelTemplate), RelativeSource={RelativeSource TemplatedParent}}"
                                   >
                         <ItemsControl.InputBindings>
-                            <KeyBinding Command="sbc:SBCommands.SBHelpCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBHelpCommand"
                       Key="F1" />
-                            <KeyBinding Command="sbc:SBCommands.SBSaveCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBSaveCommand"
                       Key="F2" />
-                            <KeyBinding Command="sbc:SBCommands.SBIntuitiveHelpCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBIntuitiveHelpCommand"
                       Key="F3" />
-                            <KeyBinding Command="sbc:SBCommands.SBDeleteRecordCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBDeleteRecordCommand"
                       Key="F4" />
-                            <KeyBinding Command="sbc:SBCommands.F5Command"
+                            <KeyBinding Command="rkt:SBCommands.F5Command"
                       Key="F5" />
-                            <KeyBinding Command="sbc:SBCommands.F6Command"
+                            <KeyBinding Command="rkt:SBCommands.F6Command"
                       Key="F6" />
-                            <KeyBinding Command="sbc:SBCommands.F7Command"
+                            <KeyBinding Command="rkt:SBCommands.F7Command"
                       Key="F7" />
-                            <KeyBinding Command="sbc:SBCommands.F8Command"
+                            <KeyBinding Command="rkt:SBCommands.F8Command"
                       Key="F8" />
-                            <KeyBinding Command="sbc:SBCommands.F9Command"
+                            <KeyBinding Command="rkt:SBCommands.F9Command"
                       Key="F9" />
-                            <KeyBinding Command="sbc:SBCommands.F10Command"
+                            <KeyBinding Command="rkt:SBCommands.F10Command"
                       Key="F10" />
-                            <KeyBinding Command="sbc:SBCommands.F11Command"
+                            <KeyBinding Command="rkt:SBCommands.F11Command"
                       Key="F11" />
-                            <KeyBinding Command="sbc:SBCommands.F12Command"
+                            <KeyBinding Command="rkt:SBCommands.F12Command"
                       Key="F12" />
-                            <KeyBinding Command="sbc:SBCommands.F13Command"
+                            <KeyBinding Command="rkt:SBCommands.F13Command"
                       Key="F13" />
-                            <KeyBinding Command="sbc:SBCommands.F14Command"
+                            <KeyBinding Command="rkt:SBCommands.F14Command"
                       Key="F14" />
-                            <KeyBinding Command="sbc:SBCommands.F15Command"
+                            <KeyBinding Command="rkt:SBCommands.F15Command"
                       Key="F15" />
-                            <KeyBinding Command="sbc:SBCommands.F16Command"
+                            <KeyBinding Command="rkt:SBCommands.F16Command"
                       Key="F16" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF1Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF1Command"
                       Modifiers="Shift"
                       Key="F1" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF2Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF2Command"
                       Modifiers="Shift"
                       Key="F2" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF3Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF3Command"
                       Modifiers="Shift"
                       Key="F3" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF4Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF4Command"
                       Modifiers="Shift"
                       Key="F4" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF5Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF5Command"
                       Modifiers="Shift"
                       Key="F5" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF6Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF6Command"
                       Modifiers="Shift"
                       Key="F6" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF7Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF7Command"
                       Modifiers="Shift"
                       Key="F7" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF8Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF8Command"
                       Modifiers="Shift"
                       Key="F8" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF9Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF9Command"
                       Modifiers="Shift"
                       Key="F9" />
-                            <KeyBinding Command="sbc:SBCommands.ShiftF10Command"
+                            <KeyBinding Command="rkt:SBCommands.ShiftF10Command"
                       Modifiers="Shift"
                       Key="F10" />
-                            <KeyBinding Command="sbc:SBCommands.SBCtrlxCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBCtrlxCommand"
                       Modifiers="Control"                                
                       Key="X" />
-                            <KeyBinding Command="sbc:SBCommands.SBExtendLengthCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBExtendLengthCommand"
                       Modifiers="Control"
                       Key="End" />
-                            <KeyBinding Command="sbc:SBCommands.SBShiftTabCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBShiftTabCommand"
                       Modifiers="Shift"
                       Key="Tab" />
-                            <KeyBinding Command="sbc:SBCommands.SBTabCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBTabCommand"
                       Key="Tab" />
-                            <KeyBinding Command="sbc:SBCommands.SBDownCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBDownCommand"
                       Key="Down" />
-                            <KeyBinding Command="sbc:SBCommands.SBUpCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBUpCommand"
                       Key="Up" />
-                            <KeyBinding Command="sbc:SBCommands.SBPageUpCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBPageUpCommand"
                       Key="PageUp" />
-                            <KeyBinding Command="sbc:SBCommands.SBPageDownCommand"
+                            <KeyBinding Command="rkt:SBCommands.SBPageDownCommand"
                       Key="PageDown" />
-                            <KeyBinding Command="sbc:SBCommands.IncreaseZoomCommand"
+                            <KeyBinding Command="rkt:SBCommands.IncreaseZoomCommand"
                       Modifiers="Control"
                       Key="Add" />
-                            <KeyBinding Command="sbc:SBCommands.DecreaseZoomCommand"
+                            <KeyBinding Command="rkt:SBCommands.DecreaseZoomCommand"
                       Modifiers="Control"
                       Key="Subtract" />
 
@@ -133,6 +133,6 @@
         </Setter>
     </Style>
 
-    <!--ItemTemplate="{Binding Path=(sbc:SBItemsControl.ItemsTemplate), RelativeSource={RelativeSource TemplatedParent}}"-->
+    <!--ItemTemplate="{Binding Path=(rkt:SBItemsControl.ItemsTemplate), RelativeSource={RelativeSource TemplatedParent}}"-->
 
 </ResourceDictionary>

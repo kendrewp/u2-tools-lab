@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
     <ResourceDictionary.MergedDictionaries>
@@ -19,6 +19,6 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBCalendarStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource BaseSBCalendarStyle}" TargetType="{x:Type sbc:SBCalendar}"/>
+    <Style BasedOn="{StaticResource BaseSBCalendarStyle}" TargetType="{x:Type rkt:SBCalendar}"/>
 
 </ResourceDictionary>

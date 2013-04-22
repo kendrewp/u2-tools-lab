@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:g="clr-namespace:System.Globalization;assembly=mscorlib"
     >
@@ -23,7 +23,7 @@
         <TextBlock x:Name="PART_SBDay" Text="{Binding}" />
     </DataTemplate>
     
-    <Style x:Key="BaseSBCalendarStyle" TargetType="{x:Type sbc:SBCalendar}">
+    <Style x:Key="BaseSBCalendarStyle" TargetType="{x:Type rkt:SBCalendar}">
         <Setter Property="Width" Value="{Binding Path=GuiObjectDefinition.Width, RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="Height" Value="{Binding Path=GuiObjectDefinition.Height, RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="Margin" Value="{Binding Path=GuiObjectDefinition.Margin, RelativeSource={RelativeSource Mode=Self}}" />
@@ -31,7 +31,7 @@
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type sbc:SBCalendar}">
+                <ControlTemplate TargetType="{x:Type rkt:SBCalendar}">
                     
                     <Grid>
                         <Rectangle StrokeEndLineCap="Round" StrokeThickness="1" RadiusX="7.5" RadiusY="7.5"
@@ -72,12 +72,12 @@
                                 <ColumnDefinition Width ="*" />
                                 <ColumnDefinition Width ="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <RepeatButton Grid.Column ="0" Content="&lt;" FontWeight="Bold" Command="sbc:SBCommands.SBFlipMonthCommand" CommandParameter="False"/>
+                            <RepeatButton Grid.Column ="0" Content="&lt;" FontWeight="Bold" Command="rkt:SBCommands.SBFlipMonthCommand" CommandParameter="False"/>
                             <TextBlock Grid.Column ="1" FontWeight="Bold" HorizontalAlignment ="Center" VerticalAlignment="Center"  Margin="3" Text="{Binding Path=SelectedDate.Year, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}, 
                                         Converter={StaticResource SBConverter}}"/>
                             <TextBlock Grid.Column ="2" FontWeight="Bold" HorizontalAlignment ="Left" VerticalAlignment="Center"  Margin="3" Text="{Binding Path=SelectedDate.Month, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}, 
                                         Converter={StaticResource IntToMonthConverter}}"/>
-                            <RepeatButton Grid.Column="3" Content="&gt;" FontWeight="Bold" Command="sbc:SBCommands.SBFlipMonthCommand" CommandParameter="True"/>
+                            <RepeatButton Grid.Column="3" Content="&gt;" FontWeight="Bold" Command="rkt:SBCommands.SBFlipMonthCommand" CommandParameter="True"/>
 
                         </Grid>
                         <StatusBar Grid.Row="1" 
@@ -97,7 +97,7 @@
                                      ItemTemplate="{StaticResource DayTemplate}">
                                 <ListBox.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <UniformGrid Columns="7" Rows="6" FirstColumn="{Binding RelativeSource={RelativeSource AncestorType={x:Type sbc:SBCalendar}}, Path=FirstColumn}"/>
+                                        <UniformGrid Columns="7" Rows="6" FirstColumn="{Binding RelativeSource={RelativeSource AncestorType={x:Type rkt:SBCalendar}}, Path=FirstColumn}"/>
                                     </ItemsPanelTemplate>
                                 </ListBox.ItemsPanel>
                             </ListBox>

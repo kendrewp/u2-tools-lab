@@ -16,7 +16,7 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls">
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/SystemColors.xaml" />
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/Converters.xaml" />
@@ -25,19 +25,19 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
 
     <!-- BaseMenuItemStyle -->
     <Style x:Key="BaseMenuItemStyle" TargetType="{x:Type MenuItem}" >
-        <Setter Property="sbc:SBUISupport.StyleName" Value="BaseMenuItemStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="BaseMenuItemStyle" />
 
-        <Setter Property="Control.FontFamily" Value ="{Binding Path=DefaultFontFamily, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
-        <Setter Property="Control.FontWeight" Value ="{Binding Path=DefaultFontWeight, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
+        <Setter Property="Control.FontFamily" Value ="{Binding Path=DefaultFontFamily, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
+        <Setter Property="Control.FontWeight" Value ="{Binding Path=DefaultFontWeight, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
 
         <Style.Triggers>
 
-            <DataTrigger Binding="{Binding Path=DefaultFontSize, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
-                <Setter Property="Control.FontSize" Value ="{Binding Path=DefaultFontSize, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
+            <DataTrigger Binding="{Binding Path=DefaultFontSize, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
+                <Setter Property="Control.FontSize" Value ="{Binding Path=DefaultFontSize, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBUnsetValueConverter}}" />
             </DataTrigger>
             
             <DataTrigger Binding="{Binding IsSeparator}" Value="False">
-                <Setter Property="sbc:SBMenu.SelectLetter" Value="{Binding SelectLetter}" />
+                <Setter Property="rkt:SBMenu.SelectLetter" Value="{Binding SelectLetter}" />
             </DataTrigger>
             
             <!-- if no command specified in the MenuOption use the standard SB/XA menu option execute command -->
@@ -46,7 +46,7 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
                     <Condition Binding="{Binding IsSeparator}" Value="False" />
                     <Condition Binding="{Binding Command, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="True" />
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Command" Value="sbc:SBCommands.SBExecuteMenuOptionCommand"/>
+                <Setter Property="Command" Value="rkt:SBCommands.SBExecuteMenuOptionCommand"/>
                 <Setter Property="CommandParameter" Value="{Binding}"/>
             </MultiDataTrigger>
 
@@ -71,7 +71,7 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
                 </Setter>
                 <!-- Although you can never run a command from a separator, it needs to be defined as
                      a command so it can be disabled to ensure it doesn't get keyboard input -->
-                <Setter Property="Command" Value="sbc:SBCommands.SBExecuteMenuOptionCommand"/>
+                <Setter Property="Command" Value="rkt:SBCommands.SBExecuteMenuOptionCommand"/>
                 <Setter Property="CommandParameter" Value="{Binding}"/>
             </DataTrigger>
 
@@ -82,44 +82,44 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
             <!-- Set SBIsHighlighted property so the current menu can track the
                  highlighted menu option -->
             <Trigger Property="IsHighlighted" Value="True">
-                <Setter Property="sbc:SBMenu.SBIsHighlighted" Value="True" />
+                <Setter Property="rkt:SBMenu.SBIsHighlighted" Value="True" />
             </Trigger>
         </Style.Triggers>
     </Style>
     
     <!-- BaseSBMenuStyle -->
-    <Style x:Key="BaseSBMenuStyle" TargetType="{x:Type sbc:SBMenu}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="BaseSBMenuStyle" />
+    <Style x:Key="BaseSBMenuStyle" TargetType="{x:Type rkt:SBMenu}">
+        <Setter Property="rkt:SBUISupport.StyleName" Value="BaseSBMenuStyle" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Focusable" Value="True" />
         <Setter Property="VerticalMenuTemplate" Value="{DynamicResource SBVerticalMenuTemplate}" />
         <Setter Property="HorizontalMenuTemplate" Value="{DynamicResource SBHorizontalMenuTemplate}" />
         <Setter Property="NestedMenuTemplate" Value="{DynamicResource SBHorizontalMenuTemplate}" />
-        <Setter Property="sbc:SBGUIAttribute.SBDrawable" Value="1" />
-        <Setter Property="Visibility" Value="{Binding Path=(sbc:SBGUIAttribute.SBDrawable), RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay, Converter={StaticResource SBDrawableConverter}}"/>
-        <Setter Property="IsEnabled" Value="{Binding Path=(sbc:SBGUIAttribute.SBEmphasized), RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=TwoWay}" />
-        <Setter Property="sbc:SBGUIAttribute.SBStyleName" Value="{Binding Path=MenuDefinition.Definition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
+        <Setter Property="rkt:SBGUIAttribute.SBDrawable" Value="1" />
+        <Setter Property="Visibility" Value="{Binding Path=(rkt:SBGUIAttribute.SBDrawable), RelativeSource={RelativeSource Mode=Self}, Mode=TwoWay, Converter={StaticResource SBDrawableConverter}}"/>
+        <Setter Property="IsEnabled" Value="{Binding Path=(rkt:SBGUIAttribute.SBEmphasized), RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource SBConverter}, Mode=TwoWay}" />
+        <Setter Property="rkt:SBGUIAttribute.SBStyleName" Value="{Binding Path=MenuDefinition.Definition.StyleName, RelativeSource={RelativeSource Mode=Self}, Mode=OneWay}" />
 
         <!-- Mapping from server attribute names to XUI properties -->
-        <Setter Property="sbc:SBGUIAttribute.SBAttributeMap">
+        <Setter Property="rkt:SBGUIAttribute.SBAttributeMap">
             <Setter.Value>
-                <sbc:SBAttributeMap>
-                    <sbc:SBAttribute Name="style_name"
-                                     GetProperty="(sbc:SBGUIAttribute.SBStyleName)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBStyleName)" />
-                    <sbc:SBAttribute Name="drawable"
-                                     GetProperty="(sbc:SBGUIAttribute.SBDrawable)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBDrawable)" />
-                    <sbc:SBAttribute Name="background"
+                <rkt:SBAttributeMap>
+                    <rkt:SBAttribute Name="style_name"
+                                     GetProperty="(rkt:SBGUIAttribute.SBStyleName)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBStyleName)" />
+                    <rkt:SBAttribute Name="drawable"
+                                     GetProperty="(rkt:SBGUIAttribute.SBDrawable)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBDrawable)" />
+                    <rkt:SBAttribute Name="background"
                                      GetProperty="Control.Background" GetConverter="{StaticResource SBColorConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBBackground)"/>
-                    <sbc:SBAttribute Name="foreground" 
+                                     SetProperty="(rkt:SBGUIAttribute.SBBackground)"/>
+                    <rkt:SBAttribute Name="foreground" 
                                      GetProperty="Control.Foreground" GetConverter="{StaticResource SBColorConverter}"
-                                     SetProperty="(sbc:SBGUIAttribute.SBForeground)"/>
-                    <sbc:SBAttribute Name="object_name"
-                                     GetProperty="(sbc:SBGUIAttribute.SBObjectName)"
-                                     SetProperty="(sbc:SBGUIAttribute.SBObjectName)" />
-                </sbc:SBAttributeMap>
+                                     SetProperty="(rkt:SBGUIAttribute.SBForeground)"/>
+                    <rkt:SBAttribute Name="object_name"
+                                     GetProperty="(rkt:SBGUIAttribute.SBObjectName)"
+                                     SetProperty="(rkt:SBGUIAttribute.SBObjectName)" />
+                </rkt:SBAttributeMap>
             </Setter.Value>
         </Setter>
 
@@ -129,7 +129,7 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
         <Setter Property="Background">
             <Setter.Value>
                 <PriorityBinding FallbackValue="{StaticResource MenuBarColor}">
-                    <Binding Path="(sbc:SBGUIAttribute.SBBackground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
+                    <Binding Path="(rkt:SBGUIAttribute.SBBackground)" Mode="TwoWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}"/>
                     <Binding Path="GuiObjectDefinition.Background" Mode="OneWay" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=Self}" />
                 </PriorityBinding>
             </Setter.Value>
@@ -141,7 +141,7 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
         <Setter Property="Foreground">
             <Setter.Value>
                 <PriorityBinding FallbackValue="{StaticResource MenuTextColor}">
-                    <Binding Path="(sbc:SBGUIAttribute.SBForeground)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}"  Converter="{StaticResource SBColorConverter}" />
+                    <Binding Path="(rkt:SBGUIAttribute.SBForeground)" Mode="TwoWay" RelativeSource="{RelativeSource Mode=Self}"  Converter="{StaticResource SBColorConverter}" />
                     <Binding Path="GuiObjectDefinition.Foreground" Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}" Converter="{StaticResource SBColorConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
@@ -183,16 +183,16 @@ March 5, 2012   AKP     SBXA-8077       BaseMenuItemStyle    Changed the binding
             <!-- This trigger will check to see if the server is busy and if we should show the hour glass, if both are true then the cursor is change to the Wait cursor. -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static sbc:SBPlus.Current}}" Value="true" />
-                    <Condition Binding="{Binding Path=InputState, Source={x:Static sbc:SBPlus.Current}}" Value="Dormant" />
+                    <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static rkt:SBPlus.Current}}" Value="true" />
+                    <Condition Binding="{Binding Path=InputState, Source={x:Static rkt:SBPlus.Current}}" Value="Dormant" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="FrameworkElement.Cursor" Value="Wait" />
             </MultiDataTrigger>
             <!-- This trigger will check to see if the client is busy and if we should show the hour glass, if both are true then the cursor is change to the Wait cursor. -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static sbc:SBPlus.Current}}" Value="true" />
-                    <Condition Binding="{Binding Path=InputState, Source={x:Static sbc:SBPlus.Current}}" Value="Busy" />
+                    <Condition Binding="{Binding Path=ApplicationDefinition.IsHourGlassEnabled, Source={x:Static rkt:SBPlus.Current}}" Value="true" />
+                    <Condition Binding="{Binding Path=InputState, Source={x:Static rkt:SBPlus.Current}}" Value="Busy" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="FrameworkElement.Cursor" Value="Wait" />
             </MultiDataTrigger>

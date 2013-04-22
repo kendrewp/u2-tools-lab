@@ -11,7 +11,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbs="http://schemas.sbxa.com/Shared"
     >
 
@@ -23,17 +23,17 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/ConfigurationTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBConnectionMaintenance}" >
-        <Setter Property="sbc:SBControl.ShouldSendSBCommands" Value="false" />
-        <Setter Property="sbc:SBForm.IsMaximizable" Value="False" />
-        <Setter Property="sbc:SBForm.IsMinimizable" Value="False" />
-        <Setter Property="sbc:SBForm.IsClosable" Value="False" />
-        <Setter Property="sbc:SBForm.FormBorderWidth" Value="{x:Static sbs:GenericConstants.DEFAULT_FORM_BORDER_WIDTH}" />
+    <Style TargetType="{x:Type rkt:SBConnectionMaintenance}" >
+        <Setter Property="rkt:SBControl.ShouldSendSBCommands" Value="false" />
+        <Setter Property="rkt:SBForm.IsMaximizable" Value="False" />
+        <Setter Property="rkt:SBForm.IsMinimizable" Value="False" />
+        <Setter Property="rkt:SBForm.IsClosable" Value="False" />
+        <Setter Property="rkt:SBForm.FormBorderWidth" Value="{x:Static rkt:GenericConstants.DEFAULT_FORM_BORDER_WIDTH}" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="IsCachable" Value="False" />
-        <Setter Property="sbc:SBForm.FormBackground" Value="{DynamicResource SBControlBackground}" />
+        <Setter Property="rkt:SBForm.FormBackground" Value="{DynamicResource SBControlBackground}" />
 
-        <Setter Property="sbc:SBForm.FormBorderColor">
+        <Setter Property="rkt:SBForm.FormBorderColor">
             <Setter.Value>
                 <PriorityBinding >
                     <PriorityBinding.FallbackValue>
@@ -42,7 +42,7 @@
                             <GradientStop Color="#FF73C5F0" Offset="0"/>
                         </LinearGradientBrush>
                     </PriorityBinding.FallbackValue>
-                    <Binding Path="(sbc:SBGUIAttribute.SBBorderColor)"
+                    <Binding Path="(rkt:SBGUIAttribute.SBBorderColor)"
                              Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}"
                              Converter="{StaticResource SBColorConverter}"
                              />
@@ -75,17 +75,17 @@
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
 
-                                <sbc:SBButton Style="{DynamicResource SBLocalButtonStyle}"
-                                              sbc:SBGUIAttribute.SBString="Apply"
+                                <rkt:SBButton Style="{DynamicResource SBLocalButtonStyle}"
+                                              rkt:SBGUIAttribute.SBString="Apply"
                                               Grid.Row="0" Grid.Column="0"
-                                              Command="sbc:SBCommands.CacheObjectCommand"
+                                              Command="rkt:SBCommands.CacheObjectCommand"
                                               CommandParameter="SBConnectionMaintenance"
                                               />
 
-                                <sbc:SBButton Style="{StaticResource SBLocalButtonStyle}"
-                                              sbc:SBGUIAttribute.SBString="Cancel"
+                                <rkt:SBButton Style="{StaticResource SBLocalButtonStyle}"
+                                              rkt:SBGUIAttribute.SBString="Cancel"
                                               Grid.Row="0" Grid.Column="1"
-                                              Command="sbc:SBCommands.DisposeCurrentFormCommand"
+                                              Command="rkt:SBCommands.DisposeCurrentFormCommand"
                                               CommandParameter="SBConnectionMaintenance"
                                               />
 
@@ -99,7 +99,7 @@
 
         <Style.Triggers>
             <Trigger Property="Mode" Value="Add">
-                <Setter Property="sbc:SBGUIAttribute.SBTitle" Value="AddCommunicationServerConnectionTitle" />
+                <Setter Property="rkt:SBGUIAttribute.SBTitle" Value="AddCommunicationServerConnectionTitle" />
             </Trigger>
         </Style.Triggers>
 

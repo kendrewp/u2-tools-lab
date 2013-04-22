@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sbx="clr-namespace:SBXA.UI.WPFControls.SBXceed"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     xmlns:sbe="clr-namespace:SBXA.UI.WPFControls.MarkupExtensions"
                     xmlns:sbs="http://schemas.sbxa.com/Shared"
                     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid">
@@ -2101,35 +2101,35 @@
    <!-- DefaultStyleKey declarations                                        -->
    <!-- =================================================================== -->
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme}"
           TargetType="xcdg:CardflowView3D"
           BasedOn="{StaticResource cardflowView3DSBXGridViewDefaultValues}" />
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
           TargetType="xcdg:DataGridControl"
           BasedOn="{StaticResource cardflowView3DSBXGridViewDataGridControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Row}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Row}"
           TargetType="xcdg:Row"
           BasedOn="{StaticResource cardflowView3DSBXGridViewRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
           TargetType="xcdg:DataRow"
           BasedOn="{StaticResource cardflowView3DSBXGridViewDataRowStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
           TargetType="xcdg:Cell"
           BasedOn="{StaticResource cardflowView3DSBXGridViewCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
           TargetType="xcdg:DataCell"
           BasedOn="{StaticResource cardflowView3DSBXGridViewDataCellStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
           TargetType="xcdg:GroupHeaderControl"
           BasedOn="{StaticResource cardflowView3DSBXGridViewGroupHeaderControlStyle}"/>
 
-   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
+   <Style x:Key="{xcdg:ThemeKey TargetViewType=xcdg:CardflowView3D, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
           TargetType="xcdg:ScrollTip"
           BasedOn="{StaticResource cardflowView3DSBXGridViewScrollTipStyle}"/>
 

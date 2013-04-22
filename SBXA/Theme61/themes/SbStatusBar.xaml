@@ -10,7 +10,7 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
     <ResourceDictionary.MergedDictionaries>
@@ -57,16 +57,16 @@
     </Style>
 
     <!-- SBStatusBarButtonStyle -->
-    <Style x:Key="SBStatusBarButtonStyle" TargetType="{x:Type sbc:SBButton}" >
+    <Style x:Key="SBStatusBarButtonStyle" TargetType="{x:Type rkt:SBButton}" >
 
         <Style.Triggers>
-            <Trigger Property="sbc:SBButton.IsSBButtonPressed" Value="true">
-                <Setter Property="sbc:SBPlus.ExecuteServerProcess" Value="USER.FLAGS" />
+            <Trigger Property="rkt:SBButton.IsSBButtonPressed" Value="true">
+                <Setter Property="rkt:SBPlus.ExecuteServerProcess" Value="USER.FLAGS" />
             </Trigger>
         </Style.Triggers>
 
         <Setter Property="Width" Value="Auto" />
-        <Setter Property="sbc:SBButton.ShouldSendSBCommands" Value="false" />
+        <Setter Property="rkt:SBButton.ShouldSendSBCommands" Value="false" />
         <Setter Property="FontSize" Value="11" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -79,7 +79,7 @@
     <DataTemplate x:Key="SBStatusBarMenuItemTemplate">
         <MenuItem Header="{Binding Item}" 
                   IsChecked="{Binding IsSelected}"
-                  Command="sbc:SBCommands.SetThemeCommand"
+                  Command="rkt:SBCommands.SetThemeCommand"
                   CommandParameter="{Binding Value}"/>
     </DataTemplate>
 
@@ -103,7 +103,7 @@
         <Setter Property="Margin" Value="2,0,0,0"/>
         <Setter Property="Grid.Column" Value="0"/>
         <Setter Property="VerticalAlignment"  Value="Center"/>
-        <Setter Property="Content" Value="{Binding Path=HelpMessage, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBXamlConverter}}">
+        <Setter Property="Content" Value="{Binding Path=HelpMessage, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBXamlConverter}}">
             
             
         </Setter>
@@ -118,7 +118,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0,0,1,1"/>
-        <Setter Property="Command" Value="sbc:SBCommands.DecreaseZoomCommand" />
+        <Setter Property="Command" Value="rkt:SBCommands.DecreaseZoomCommand" />
         <Setter Property="CommandParameter" Value="0.05" />
         <Setter Property="Template">
             <Setter.Value>
@@ -164,7 +164,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="0,0,1,1"/>
-        <Setter Property="Command" Value="sbc:SBCommands.IncreaseZoomCommand" />
+        <Setter Property="Command" Value="rkt:SBCommands.IncreaseZoomCommand" />
         <Setter Property="CommandParameter" Value="0.05" />
         <Setter Property="Template">
             <Setter.Value>
@@ -210,17 +210,17 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type sbc:SBStatusBar}">
+    <Style TargetType="{x:Type rkt:SBStatusBar}">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="Height" Value="25" />
-        <Setter Property="Width" Value="{Binding Path=(sbc:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />       
+        <Setter Property="Width" Value="{Binding Path=(rkt:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />       
         <Setter Property="Background" Value="{DynamicResource SBStatusBarBackground}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type sbc:SBStatusBar}">
+                <ControlTemplate TargetType="{x:Type rkt:SBStatusBar}">
                         <Grid Height="{TemplateBinding Height}" Background="{TemplateBinding Background}" >
                             <Grid.ColumnDefinitions>
                             <!-- Message (0) -->
@@ -264,7 +264,7 @@
                                             
                             
                          <!-- ProgressBar -->
-                        <sbc:SBProgressBarControl x:Name="PART_SBProgressBar"
+                        <rkt:SBProgressBarControl x:Name="PART_SBProgressBar"
                                                   Grid.Column="2"
                                                   IsTabStop="False"
                                                   ToolTip=""
@@ -283,24 +283,24 @@
                               Background="Transparent"
                               VerticalAlignment="Center"
                               Visibility="{Binding Path=OptionsMenuVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
-                              IsEnabled="{Binding Path=EnableMainPopups, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}}"
+                              IsEnabled="{Binding Path=EnableMainPopups, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}}"
                               >
 
                             <MenuItem Header="{Binding Mode=OneWay, ConverterParameter=OptionsPmpt,  Converter={StaticResource SBLanguageConverter}}">
-                                <MenuItem ItemsSource="{Binding Path=AvailableThemes, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}}"
+                                <MenuItem ItemsSource="{Binding Path=AvailableThemes, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}}"
                                           ItemTemplate="{StaticResource SBStatusBarMenuItemTemplate}"
                                           Header="{Binding Mode=OneWay, ConverterParameter=ThemesPmpt,  Converter={StaticResource SBLanguageConverter}}"
                                           />
-                                <MenuItem Command="sbc:SBCommands.ExecuteSBPlusProcessCommand" CommandParameter="USER.FLAGS"
+                                <MenuItem Command="rkt:SBCommands.ExecuteSBPlusProcessCommand" CommandParameter="USER.FLAGS"
                                           Header="{Binding Mode=OneWay, ConverterParameter=UserFlagsPrmpt,  Converter={StaticResource SBLanguageConverter}}"
                                           />
-                                <MenuItem Command="sbc:SBCommands.ExecuteProcessCommand" CommandParameter="ClientConfiguration"
+                                <MenuItem Command="rkt:SBCommands.ExecuteProcessCommand" CommandParameter="ClientConfiguration"
                                           Header="{Binding Mode=OneWay, ConverterParameter=ConfigurationPmpt,  Converter={StaticResource SBLanguageConverter}}"
                                           />
-                                <MenuItem Command="sbc:SBCommands.ExecuteProcessCommand" CommandParameter="CommsServerConfiguration"
+                                <MenuItem Command="rkt:SBCommands.ExecuteProcessCommand" CommandParameter="CommsServerConfiguration"
                                           Header="{Binding Mode=OneWay, ConverterParameter=CommunicationServerConfigurationPmpt,  Converter={StaticResource SBLanguageConverter}}"
                                           />
-                                <MenuItem Command="sbc:SBCommands.ExecuteProcessCommand" CommandParameter="AdminServerConfiguration"
+                                <MenuItem Command="rkt:SBCommands.ExecuteProcessCommand" CommandParameter="AdminServerConfiguration"
                                           Header="{Binding Mode=OneWay, ConverterParameter=AdministrationServerConfigurationPmpt,  Converter={StaticResource SBLanguageConverter}}"
                                           />
                             </MenuItem>
@@ -309,8 +309,8 @@
                         <!-- Connected label -->
                         <Label Style="{StaticResource SBStatusBarLabelStyle}" Grid.Column="6" 
                                        VerticalAlignment="Center"
-                                       Content="{Binding Path=ConnectionStatus, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBLanguageConverter}}"
-                                       ToolTip="{Binding Path=ConnectionInfo, Mode=OneWay, Source={x:Static sbc:SBPlus.Current}}"
+                                       Content="{Binding Path=ConnectionStatus, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBLanguageConverter}}"
+                                       ToolTip="{Binding Path=ConnectionInfo, Mode=OneWay, Source={x:Static rkt:SBPlus.Current}}"
                                        Visibility="{Binding Path=ConnectionStatusVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                        />
 
@@ -340,8 +340,8 @@
                                     Minimum="0"
                                     SmallChange="0.025"
                                     LargeChange="0.05"
-                                    Value="{Binding Path=(sbc:SBUISupport.ZoomValue), RelativeSource={RelativeSource TemplatedParent}, FallbackValue=1}"
-                                    sbc:SBUISupport.DoubleClickCommand="sbc:SBCommands.SetZoom1Command"
+                                    Value="{Binding Path=(rkt:SBUISupport.ZoomValue), RelativeSource={RelativeSource TemplatedParent}, FallbackValue=1}"
+                                    rkt:SBUISupport.DoubleClickCommand="rkt:SBCommands.SetZoom1Command"
                                     ToolTip="{Binding Path=Value, RelativeSource={RelativeSource Self},Converter={StaticResource SBPercentConverter}}"
                                     />
 
@@ -364,13 +364,13 @@
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Path=IsProgressBar, Source={x:Static sbc:SBPlus.Current}}" Value="true" />
+                                <Condition Binding="{Binding Path=IsProgressBar, Source={x:Static rkt:SBPlus.Current}}" Value="true" />
                                 <Condition Binding="{Binding Path=ProgressBarVisibility, RelativeSource={RelativeSource Mode=Self}}" Value="Visible" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="PART_SBProgressBar" Property="Visibility" Value="Visible" />
                         </MultiDataTrigger>
                         
-                        <DataTrigger Binding="{Binding Path=IsProgressBar, Source={x:Static sbc:SBPlus.Current}}" Value="false" >
+                        <DataTrigger Binding="{Binding Path=IsProgressBar, Source={x:Static rkt:SBPlus.Current}}" Value="false" >
                             <Setter TargetName="PART_SBProgressBar" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                         
@@ -388,7 +388,7 @@
 
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                             Value="Manual">
                 <Setter Property="Width" Value="NaN" />
             </DataTrigger>

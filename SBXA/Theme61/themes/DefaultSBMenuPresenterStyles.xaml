@@ -11,13 +11,13 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     >
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/Converters.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="DefaultSBMenuPresenterStyle" TargetType="{x:Type sbc:SBMenuPresenter}"/>
+    <Style x:Key="DefaultSBMenuPresenterStyle" TargetType="{x:Type rkt:SBMenuPresenter}"/>
 
 </ResourceDictionary>

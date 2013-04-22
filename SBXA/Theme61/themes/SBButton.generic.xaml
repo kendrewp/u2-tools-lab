@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
   
@@ -21,6 +21,6 @@
     <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBButtonStyle.xaml" />
   </ResourceDictionary.MergedDictionaries>
 
-  <Style TargetType="{x:Type sbc:SBButton}" BasedOn="{StaticResource BaseSBButtonStyle}" />
+  <Style TargetType="{x:Type rkt:SBButton}" BasedOn="{StaticResource BaseSBButtonStyle}" />
 
 </ResourceDictionary>

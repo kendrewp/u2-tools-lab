@@ -8,7 +8,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:g="clr-namespace:System.Globalization;assembly=mscorlib"
     xmlns:dvchart="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
@@ -28,7 +28,7 @@
         <Setter Property="Margin" Value="5,0,0,5" />
     </Style>
 
-    <ControlTemplate x:Key="SBChartTypeBarTemplate" TargetType="{x:Type sbc:SBChart}">
+    <ControlTemplate x:Key="SBChartTypeBarTemplate" TargetType="{x:Type rkt:SBChart}">
         <Grid>
             <dvchart:Chart
                 Title="{Binding Path=ChartTitle, RelativeSource ={RelativeSource TemplatedParent}}"
@@ -48,7 +48,7 @@
         </Grid>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="SBChartTypeLineTemplate" TargetType="{x:Type sbc:SBChart}">
+    <ControlTemplate x:Key="SBChartTypeLineTemplate" TargetType="{x:Type rkt:SBChart}">
         <Grid>
             <dvchart:Chart
                 Title="{Binding Path=ChartTitle, RelativeSource ={RelativeSource TemplatedParent}}"                
@@ -67,7 +67,7 @@
         </Grid>        
     </ControlTemplate>
 
-    <ControlTemplate x:Key="SBChartTypeAreaTemplate" TargetType="{x:Type sbc:SBChart}">
+    <ControlTemplate x:Key="SBChartTypeAreaTemplate" TargetType="{x:Type rkt:SBChart}">
         <Grid>
             <dvchart:Chart
                 Title="{Binding Path=ChartTitle, RelativeSource ={RelativeSource TemplatedParent}}"
@@ -87,7 +87,7 @@
     </ControlTemplate>
 
 
-    <ControlTemplate x:Key="SBChartTypeStepTemplate" TargetType="{x:Type sbc:SBChart}">
+    <ControlTemplate x:Key="SBChartTypeStepTemplate" TargetType="{x:Type rkt:SBChart}">
         <Grid>
             <dvchart:Chart
                 Title="{Binding Path=ChartTitle, RelativeSource ={RelativeSource TemplatedParent}}"
@@ -105,7 +105,7 @@
         </Grid>
     </ControlTemplate>
 
-    <ControlTemplate x:Key="SBChartTypePieTemplate" TargetType="{x:Type sbc:SBChart}">
+    <ControlTemplate x:Key="SBChartTypePieTemplate" TargetType="{x:Type rkt:SBChart}">
         <Grid>
             <dvchart:Chart
                 Title="{Binding Path=ChartTitle, RelativeSource ={RelativeSource TemplatedParent}}"
@@ -124,11 +124,11 @@
     </ControlTemplate>
 
 
-    <Style x:Key="BaseSBChartStyle" TargetType="{x:Type sbc:SBChart}">
+    <Style x:Key="BaseSBChartStyle" TargetType="{x:Type rkt:SBChart}">
         <Setter Property="Width" Value="{Binding Path=GuiObjectDefinition.Width, RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="Height" Value="{Binding Path=GuiObjectDefinition.Height, RelativeSource={RelativeSource Mode=Self}}" />
         <Setter Property="Margin" Value="{Binding Path=GuiObjectDefinition.Margin, RelativeSource={RelativeSource Mode=Self}}" />
-        <Setter Property="sbc:SBUISupport.DoubleClickCommand" Value = "sbc:SBChart.NextChartTypeCommand" />
+        <Setter Property="rkt:SBUISupport.DoubleClickCommand" Value = "rkt:SBChart.NextChartTypeCommand" />
 
         <Style.Triggers>
             <DataTrigger Binding="{Binding ChartType, RelativeSource={RelativeSource Mode=Self}}" Value="Bar">

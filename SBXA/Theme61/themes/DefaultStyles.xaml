@@ -11,9 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
-    xmlns:sbx="clr-namespace:SBXA.UI.WPFControls.SBXceed"
-    xmlns:sbe="http://schemas.sbxa.com/WPFControls" 
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
 >
 
@@ -75,7 +73,7 @@
 
 
     <!-- PART_SBFormTitle -->
-    <Style x:Key="SBPlusStyle"                      BasedOn="{StaticResource DefaultSBPlusStyle}"               TargetType="{x:Type sbc:SBPlus}" />
+    <Style x:Key="SBPlusStyle"                      BasedOn="{StaticResource DefaultSBPlusStyle}"               TargetType="{x:Type rkt:SBPlus}" />
 
     <!-- PART_SBMainwinBackground -->
     <Style x:Key="SBMainwinBackgroundStyle"         BasedOn="{StaticResource DefaultSBMainwinBackgroundStyle}"          TargetType="{x:Type Control}"/>
@@ -94,7 +92,7 @@
     <!-- PART_MainSBPlusContainerStyle -->
     <Style x:Key="MainSBPlusContainerStyle"         BasedOn="{StaticResource DefaultMainSBPlusContainerStyle}"  TargetType="{x:Type ContentControl}" />
     <!-- PART_SBMenuPresenter -->
-    <Style x:Key="SBMenuPresenterStyle"             BasedOn="{StaticResource DefaultSBMenuPresenterStyle}"      TargetType="{x:Type sbc:SBMenuPresenter}" />
+    <Style x:Key="SBMenuPresenterStyle"             BasedOn="{StaticResource DefaultSBMenuPresenterStyle}"      TargetType="{x:Type rkt:SBMenuPresenter}" />
 
     <!-- PART_SBBorderRectangle -->
     <Style x:Key="SBBorderRectangleStyle"           BasedOn="{StaticResource DefaultBorderRectangleStyle}"                TargetType="{x:Type Rectangle}" />
@@ -109,14 +107,14 @@
     <Style x:Key="SBZoomScrollViewerStyle"          BasedOn="{StaticResource DefaultSBZoomScrollViewerStyle}"            TargetType="{x:Type ScrollViewer}" />
     <Style x:Key="SBMultiFormZoomScrollViewerStyle"          BasedOn="{StaticResource DefaultSBMultiFormZoomScrollViewerStyle}"            TargetType="{x:Type ScrollViewer}" />
 
-    <Style x:Key="SBFocusTextBoxStyle"              BasedOn="{StaticResource DefaultSBFocusTextBoxStyle}"           TargetType="{x:Type sbc:SBTextBox}" />
-    <Style x:Key="SBTextBoxStyle"                   BasedOn="{StaticResource DefaultSBTextBoxStyle}"                TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBFocusTextBoxStyle"              BasedOn="{StaticResource DefaultSBFocusTextBoxStyle}"           TargetType="{x:Type rkt:SBTextBox}" />
+    <Style x:Key="SBTextBoxStyle"                   BasedOn="{StaticResource DefaultSBTextBoxStyle}"                TargetType="{x:Type rkt:SBTextBox}" />
 
     <Style x:Key="SBPasswordStyle"              BasedOn="{StaticResource DefaultSBPasswordStyle}"               TargetType="{x:Type PasswordBox}" />
     <!-- Style that is used when a memo field is not in focus -->
-    <Style x:Key="SBEditTextBoxStyle"           BasedOn="{StaticResource DefaultSBEditTextBoxStyle}"            TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBEditTextBoxStyle"           BasedOn="{StaticResource DefaultSBEditTextBoxStyle}"            TargetType="{x:Type rkt:SBTextBox}" />
     <!-- Style that is used when a memo field is has focus -->
-    <Style x:Key="SBFocusEditTextBoxStyle"           BasedOn="{StaticResource DefaultSBFocusEditTextBoxStyle}"            TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBFocusEditTextBoxStyle"           BasedOn="{StaticResource DefaultSBFocusEditTextBoxStyle}"            TargetType="{x:Type rkt:SBTextBox}" />
     
     <!-- PART_SBEditScrollBar -->
     <Style x:Key="SBEditScrollBarStyle"         BasedOn="{StaticResource DefaultSBEditScrollBarStyle}"          TargetType="{x:Type ScrollViewer}" />
@@ -127,13 +125,13 @@
     <Style x:Key="SBButtonStyle"                BasedOn="{StaticResource DefaultSBButtonStyle}"                 TargetType="{x:Type Button}" />
     <Style x:Key="SBRadioStyle"                 BasedOn="{StaticResource DefaultSBRadioStyle}"                  TargetType="{x:Type ItemsControl}"/>
     <Style x:Key="SBRadioButtonStyle"           BasedOn="{StaticResource DefaultSBRadioButtonStyle}"            TargetType="{x:Type RadioButton}" />
-    <Style x:Key="SBFocusRadioVisualStyle"      BasedOn="{StaticResource DefaultSBFocusRadioVisualStyle}"       TargetType="{x:Type sbc:SBRadio}" />
+    <Style x:Key="SBFocusRadioVisualStyle"      BasedOn="{StaticResource DefaultSBFocusRadioVisualStyle}"       TargetType="{x:Type rkt:SBRadio}" />
     <Style x:Key="SBToggleStyle"                BasedOn="{StaticResource DefaultSBToggleStyle}"                 TargetType="{x:Type CheckBox}"/>
     <!-- PART_FocusSite -->
     <Style x:Key="SBComboBoxControlStyle"                  BasedOn="{StaticResource DefaultSBComboBoxControlStyle}"                  TargetType="{x:Type ComboBox}" />
     <Style x:Key="SBFocusComboBoxControlStyle"             BasedOn="{StaticResource DefaultSBFocusComboBoxControlStyle}"             TargetType="{x:Type ComboBox}" />
-    <Style x:Key="SBAutoCompleteComboBoxControlStyle"      BasedOn="{StaticResource DefaultSBAutoCompleteComboBoxControlStyle}"      TargetType="{x:Type sbc:AutoCompleteComboBox}" />
-    <Style x:Key="SBFocusAutoCompleteComboBoxControlStyle" BasedOn="{StaticResource DefaultSBFocusAutoCompleteComboBoxControlStyle}" TargetType="{x:Type sbc:AutoCompleteComboBox}" />
+    <Style x:Key="SBAutoCompleteComboBoxControlStyle"      BasedOn="{StaticResource DefaultSBAutoCompleteComboBoxControlStyle}"      TargetType="{x:Type rkt:AutoCompleteComboBox}" />
+    <Style x:Key="SBFocusAutoCompleteComboBoxControlStyle" BasedOn="{StaticResource DefaultSBFocusAutoCompleteComboBoxControlStyle}" TargetType="{x:Type rkt:AutoCompleteComboBox}" />
 
     <Style x:Key="SBRectangleStyle"             BasedOn="{StaticResource DefaultSBRectangleStyle}" />
     <!-- PART_SBSeparator -->
@@ -156,7 +154,7 @@
     <!--                           Selection Control Styles                      -->
     <!-- *********************************************************************** -->
 
-    <Style x:Key="SBSelectionControlButtonStyle"    BasedOn="{StaticResource DefaultSBSelectionControlButtonStyle}" TargetType="{x:Type sbc:SBButton}"/>
+    <Style x:Key="SBSelectionControlButtonStyle"    BasedOn="{StaticResource DefaultSBSelectionControlButtonStyle}" TargetType="{x:Type rkt:SBButton}"/>
     <Style x:Key="SBXSCSBTextBoxStyle"              BasedOn="{StaticResource DefaultSBXSCSBTextBoxStyle}"           TargetType="{x:Type TextBlock}" />
     <!-- Style for rows in the Intuitive help grid. -->
     <Style x:Key="SBXSCGridViewDataRowStyle"        BasedOn="{StaticResource tableViewSBXSCGridViewDataRowStyle}"   TargetType="xcdg:DataRow" />
@@ -176,27 +174,27 @@
     <Style x:Key="SBButtonBarStyle" BasedOn="{StaticResource DefaultSBButtonBarStyle}" TargetType="{x:Type Panel}" />
 
     <!-- SBEditor used to display code in XE -->
-    <Style x:Key="SBEditorStyle" BasedOn="{StaticResource DefaultSBEditorStyle}" TargetType="{x:Type sbe:SBEditor}" />
+    <Style x:Key="SBEditorStyle" BasedOn="{StaticResource DefaultSBEditorStyle}" TargetType="{x:Type rkt:SBEditor}" />
 
     <!-- Styles for multi-value fields that are not using the grid -->
-    <Style x:Key="SBMultiValueFieldRowStyle" BasedOn="{StaticResource DefaultSBMultiValueFieldRowStyle}" TargetType="{x:Type sbc:SBMultiValueFieldRow}" />
+    <Style x:Key="SBMultiValueFieldRowStyle" BasedOn="{StaticResource DefaultSBMultiValueFieldRowStyle}" TargetType="{x:Type rkt:SBMultiValueFieldRow}" />
     <!-- Cell editor style that is used when column and row layout is in effect and the grid is not interleaved. -->
-    <Style x:Key="SBXCharSBFieldStyle" BasedOn="{StaticResource DefaultSBXCharSBFieldStyle}" TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBXCharSBFieldStyle" BasedOn="{StaticResource DefaultSBXCharSBFieldStyle}" TargetType="{x:Type rkt:SBField}" />
 
     <!-- Cell content style that is used when column and row layout is in effect and the grid is not interleaved. -->
-    <Style x:Key="SBXCharSBFieldContentStyle" BasedOn="{StaticResource DefaultSBXCharSBFieldContentStyle}" TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBXCharSBFieldContentStyle" BasedOn="{StaticResource DefaultSBXCharSBFieldContentStyle}" TargetType="{x:Type rkt:SBField}" />
     
     <!-- Style used to style the grid for column and row layout when the grid is not interleaved. -->
-    <Style x:Key="SBXCharGridControlStyle" BasedOn="{StaticResource DefaultSBXCharGridControlStyle}" TargetType="{x:Type sbx:SBXGridControl}" />
+    <Style x:Key="SBXCharGridControlStyle" BasedOn="{StaticResource DefaultSBXCharGridControlStyle}" TargetType="{x:Type rkt:SBXGridControl}" />
         
     <!-- *********** -->
     <!-- Grid styles -->
     <!-- *********** -->
 
     <!-- PART_FocusSite -->
-    <Style x:Key="SBXSBTextBoxStyle"            BasedOn="{StaticResource DefaultSBXSBTextBoxStyle}"             TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBXSBTextBoxStyle"            BasedOn="{StaticResource DefaultSBXSBTextBoxStyle}"             TargetType="{x:Type rkt:SBTextBox}" />
     <!-- The following style is used for the content of fields in the grid. -->
-    <Style x:Key="SBXSBTextBoxContentStyle"     BasedOn="{StaticResource DefaultSBXSBTextBoxContentStyle}"      TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBXSBTextBoxContentStyle"     BasedOn="{StaticResource DefaultSBXSBTextBoxContentStyle}"      TargetType="{x:Type rkt:SBTextBox}" />
     <!-- PART_FocusSite -->
     <Style x:Key="SBXToggleStyle"               BasedOn="{StaticResource DefaultSBXToggleStyle}"                TargetType="{x:Type CheckBox}" />
     
@@ -204,21 +202,21 @@
     <!-- Table view specific styles -->
     <!-- ************************** -->
 
-    <Style x:Key="SBXSBToggleStyle"             BasedOn="{StaticResource DefaultSBXSBToggleStyle}"              TargetType="{x:Type sbc:SBToggle}" />
-    <Style x:Key="SBXSBToggleContentStyle"      BasedOn="{StaticResource DefaultSBXSBToggleContentStyle}"       TargetType="{x:Type sbc:SBToggle}" />
+    <Style x:Key="SBXSBToggleStyle"             BasedOn="{StaticResource DefaultSBXSBToggleStyle}"              TargetType="{x:Type rkt:SBToggle}" />
+    <Style x:Key="SBXSBToggleContentStyle"      BasedOn="{StaticResource DefaultSBXSBToggleContentStyle}"       TargetType="{x:Type rkt:SBToggle}" />
     
     
-    <Style x:Key="SBXSBComboBoxStyle"                         BasedOn="{StaticResource DefaultSBXSBComboBoxStyle}"                         TargetType="{x:Type sbc:SBComboBox}" />    
+    <Style x:Key="SBXSBComboBoxStyle"                         BasedOn="{StaticResource DefaultSBXSBComboBoxStyle}"                         TargetType="{x:Type rkt:SBComboBox}" />    
     <Style x:Key="SBXSBComboBoxControlStyle"                  BasedOn="{StaticResource DefaultSBXSBComboBoxControlStyle}"                  TargetType="{x:Type ComboBox}" />
     <Style x:Key="SBXSBFocusComboBoxControlStyle"             BasedOn="{StaticResource DefaultSBXSBFocusComboBoxControlStyle}"             TargetType="{x:Type ComboBox}" />
-    <Style x:Key="SBXSBAutoCompleteComboBoxControlStyle"      BasedOn="{StaticResource DefaultSBXSBAutoCompleteComboBoxControlStyle}"      TargetType="{x:Type sbc:AutoCompleteComboBox}" />
-    <Style x:Key="SBXSBFocusAutoCompleteComboBoxControlStyle" BasedOn="{StaticResource DefaultSBXSBFocusAutoCompleteComboBoxControlStyle}" TargetType="{x:Type sbc:AutoCompleteComboBox}" />
+    <Style x:Key="SBXSBAutoCompleteComboBoxControlStyle"      BasedOn="{StaticResource DefaultSBXSBAutoCompleteComboBoxControlStyle}"      TargetType="{x:Type rkt:AutoCompleteComboBox}" />
+    <Style x:Key="SBXSBFocusAutoCompleteComboBoxControlStyle" BasedOn="{StaticResource DefaultSBXSBFocusAutoCompleteComboBoxControlStyle}" TargetType="{x:Type rkt:AutoCompleteComboBox}" />
 
     <!-- PART_SBXSBField -->
-    <Style x:Key="SBXSBFieldStyle"              BasedOn="{StaticResource DefaultSBXSBFieldStyle}"               TargetType="{x:Type sbc:SBField}" />
-    <Style x:Key="SBXSBFieldContentStyle"       BasedOn="{StaticResource DefaultSBXSBFieldContentStyle}"        TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBXSBFieldStyle"              BasedOn="{StaticResource DefaultSBXSBFieldStyle}"               TargetType="{x:Type rkt:SBField}" />
+    <Style x:Key="SBXSBFieldContentStyle"       BasedOn="{StaticResource DefaultSBXSBFieldContentStyle}"        TargetType="{x:Type rkt:SBField}" />
     <!-- PART_SBGridControl -->
-    <Style x:Key="SBXGridControlStyle"          BasedOn="{StaticResource DefaultSBXGridControlStyle}"           TargetType="{x:Type sbx:SBXGridControl}" />
+    <Style x:Key="SBXGridControlStyle"          BasedOn="{StaticResource DefaultSBXGridControlStyle}"           TargetType="{x:Type rkt:SBXGridControl}" />
     <!-- Styles the container for each row in the grid -->
     <Style x:Key="SBXItemContainerStyle"        BasedOn="{StaticResource DefaultSBXItemContainerStyle}"         TargetType="{x:Type xcdg:DataRow}" />
     
@@ -228,22 +226,22 @@
     <!-- ************************** -->
 
     <!-- PART_SBGridControl -->
-    <Style x:Key="SBXCardViewControlStyle"              BasedOn="{StaticResource DefaultSBXCardViewControlStyle}"           TargetType="{x:Type sbx:SBXGridControl}" />
+    <Style x:Key="SBXCardViewControlStyle"              BasedOn="{StaticResource DefaultSBXCardViewControlStyle}"           TargetType="{x:Type rkt:SBXGridControl}" />
 
     <!-- PART_SBField -->
-    <Style x:Key="SBXCardViewSBToggleStyle"             BasedOn="{StaticResource DefaultSBXCardViewSBToggleStyle}"              TargetType="{x:Type sbc:SBToggle}" />
-    <Style x:Key="SBXCardViewSBComboBoxStyle"           BasedOn="{StaticResource DefaultSBXCardViewSBComboBoxStyle}"            TargetType="{x:Type sbc:SBComboBox}" />
-    <Style x:Key="SBXCardViewSBComboBoxContentStyle"    BasedOn="{StaticResource DefaultSBXCardViewSBComboBoxContentStyle}"     TargetType="{x:Type sbc:SBComboBox}" />
+    <Style x:Key="SBXCardViewSBToggleStyle"             BasedOn="{StaticResource DefaultSBXCardViewSBToggleStyle}"              TargetType="{x:Type rkt:SBToggle}" />
+    <Style x:Key="SBXCardViewSBComboBoxStyle"           BasedOn="{StaticResource DefaultSBXCardViewSBComboBoxStyle}"            TargetType="{x:Type rkt:SBComboBox}" />
+    <Style x:Key="SBXCardViewSBComboBoxContentStyle"    BasedOn="{StaticResource DefaultSBXCardViewSBComboBoxContentStyle}"     TargetType="{x:Type rkt:SBComboBox}" />
 
         <!-- Style for the card view that uses a StackPanel as opposed to a StackPanel by default -->
-    <Style x:Key="StackedSBMvEditControlStyle"          BasedOn="{StaticResource DefaultStackedSBMvEditControlStyle}"           TargetType="{x:Type sbc:SBMvEditControl}"/>
+    <Style x:Key="StackedSBMvEditControlStyle"          BasedOn="{StaticResource DefaultStackedSBMvEditControlStyle}"           TargetType="{x:Type rkt:SBMvEditControl}"/>
 
 
     <!-- PART_SBField -->
-    <Style x:Key="SBXCardViewSBFieldStyle"              BasedOn="{StaticResource DefaultSBXCardViewSBFieldStyle}"               TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBXCardViewSBFieldStyle"              BasedOn="{StaticResource DefaultSBXCardViewSBFieldStyle}"               TargetType="{x:Type rkt:SBField}" />
     
     <!-- PART_SBField -->
-    <Style x:Key="SBXCardViewSBFieldContentStyle"       BasedOn="{StaticResource DefaultSBXCardViewSBFieldContentStyle}"        TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBXCardViewSBFieldContentStyle"       BasedOn="{StaticResource DefaultSBXCardViewSBFieldContentStyle}"        TargetType="{x:Type rkt:SBField}" />
 
     <!-- ************************** -->
     <!-- 3D view specific styles    -->
@@ -254,35 +252,35 @@
     <!-- *********** -->
 
     <!-- For a vertically laid out CardView with an image -->
-    <Style x:Key="SBXGridCardViewImageStyle"                BasedOn="{StaticResource DefaultSBXGridCardViewImageStyle}"             TargetType="{x:Type sbc:SBMvEditControl}" />
+    <Style x:Key="SBXGridCardViewImageStyle"                BasedOn="{StaticResource DefaultSBXGridCardViewImageStyle}"             TargetType="{x:Type rkt:SBMvEditControl}" />
 
     <!-- For 3D view with an image. -->
-    <Style x:Key="SBX3DViewStyle"                           BasedOn="{StaticResource DefaultSBX3DViewStyle}"                        TargetType="{x:Type sbc:SBMvEditControl}" />
+    <Style x:Key="SBX3DViewStyle"                           BasedOn="{StaticResource DefaultSBX3DViewStyle}"                        TargetType="{x:Type rkt:SBMvEditControl}" />
 
     <!-- Style used to force an Interleaved grid to apear as a regular grid, with the data forming a single row. -->
-    <Style x:Key="SBXInterleavedGridViewStyle"              BasedOn="{StaticResource DefaultSBXInterleavedGridViewStyle}"           TargetType="{x:Type sbc:SBMvEditControl}" />
+    <Style x:Key="SBXInterleavedGridViewStyle"              BasedOn="{StaticResource DefaultSBXInterleavedGridViewStyle}"           TargetType="{x:Type rkt:SBMvEditControl}" />
     <!-- Style to force the grid to use the character layout methodology, even if the form is using pixel based layout. -->
-    <Style x:Key="SBXCharLayoutGridViewStyle"               BasedOn="{StaticResource DefaultSBXCharLayoutGridViewStyle}"            TargetType="{x:Type sbc:SBMvEditControl}" />
+    <Style x:Key="SBXCharLayoutGridViewStyle"               BasedOn="{StaticResource DefaultSBXCharLayoutGridViewStyle}"            TargetType="{x:Type rkt:SBMvEditControl}" />
 
     <!-- SBXGridControl style for Interleaved grids -->
-    <Style x:Key="SBXInterleavedGridControlStyle"           BasedOn="{StaticResource DefaultSBXInterleavedGridControlStyle}"        TargetType="{x:Type sbx:SBXGridControl}" />
+    <Style x:Key="SBXInterleavedGridControlStyle"           BasedOn="{StaticResource DefaultSBXInterleavedGridControlStyle}"        TargetType="{x:Type rkt:SBXGridControl}" />
     
     <!-- SBField styles for Interleaved grids. -->
-    <Style x:Key="SBXISBFieldStyle"                         BasedOn="{StaticResource DefaultSBXISBFieldStyle}"                      TargetType="{x:Type sbc:SBField}" />
-    <Style x:Key="SBXISBFieldContentStyle"                  BasedOn="{StaticResource DefaultSBXISBFieldContentStyle}"               TargetType="{x:Type sbc:SBField}" />
-    <Style x:Key="SBXISBTextBoxStyle"                       BasedOn="{StaticResource DefaultSBXISBTextBoxStyle}"                    TargetType="{x:Type sbc:SBTextBox}" />
+    <Style x:Key="SBXISBFieldStyle"                         BasedOn="{StaticResource DefaultSBXISBFieldStyle}"                      TargetType="{x:Type rkt:SBField}" />
+    <Style x:Key="SBXISBFieldContentStyle"                  BasedOn="{StaticResource DefaultSBXISBFieldContentStyle}"               TargetType="{x:Type rkt:SBField}" />
+    <Style x:Key="SBXISBTextBoxStyle"                       BasedOn="{StaticResource DefaultSBXISBTextBoxStyle}"                    TargetType="{x:Type rkt:SBTextBox}" />
 
     <!-- Style used when laying out a grid using character column and row positions. This style will allow multiple rows per data row. -->
-    <!--<Style x:Key="SBXCharacterInterleavedGridViewStyle"     BasedOn="{StaticResource DefaultSBXCharacterInterleavedGridViewStyle}"  TargetType="{x:Type sbc:SBMvEditControl}" />-->
+    <!--<Style x:Key="SBXCharacterInterleavedGridViewStyle"     BasedOn="{StaticResource DefaultSBXCharacterInterleavedGridViewStyle}"  TargetType="{x:Type rkt:SBMvEditControl}" />-->
     
     <!-- Style used to layout a grid using GUI (device dependent) pixels. -->
-    <Style x:Key="SBXGuiGridViewStyle"                      BasedOn="{StaticResource DefaultSBXGuiGridViewStyle}"                   TargetType="{x:Type sbc:SBMvEditControl}" />
+    <Style x:Key="SBXGuiGridViewStyle"                      BasedOn="{StaticResource DefaultSBXGuiGridViewStyle}"                   TargetType="{x:Type rkt:SBMvEditControl}" />
     
     <!-- Style to style a grid separator TextBlock -->
     <Style x:Key="SBXSeparatorStyle"                        BasedOn="{StaticResource DefaultSBXSeparatorStyle}"                     TargetType="{x:Type TextBlock}" />
 
     <!-- Style for the TableView in the grid -->
-    <Style x:Key="SBXTableViewStyle"                        BasedOn="{StaticResource DefaultSBXTableViewStyle}"                     TargetType="{x:Type sbx:SBXGridView}" />
+    <Style x:Key="SBXTableViewStyle"                        BasedOn="{StaticResource DefaultSBXTableViewStyle}"                     TargetType="{x:Type rkt:SBXGridView}" />
 
     <!-- *************************************************** -->
     <!-- the following named templates are used in the grid. -->
@@ -317,12 +315,12 @@
     <Style x:Key="SBTabControlTabPanelStyle"            BasedOn="{StaticResource DefaultSBTabControlTabPanelStyle}"         TargetType="{x:Type TabPanel}" />
 
     <!-- Multi-form styles -->
-    <Style x:Key="SBFixedFormStyle"                     BasedOn="{StaticResource DefaultSBFixedFormStyle}"                  TargetType="{x:Type sbc:SBMultiFormItem}" />
+    <Style x:Key="SBFixedFormStyle"                     BasedOn="{StaticResource DefaultSBFixedFormStyle}"                  TargetType="{x:Type rkt:SBMultiFormItem}" />
     <!-- PART_SBTabForm -->
-    <Style x:Key="SBTabFormStyle"                       BasedOn="{StaticResource DefaultSBTabFormStyle}"                    TargetType="{x:Type sbc:SBMultiFormItem}" />
+    <Style x:Key="SBTabFormStyle"                       BasedOn="{StaticResource DefaultSBTabFormStyle}"                    TargetType="{x:Type rkt:SBMultiFormItem}" />
 
     <!-- PART_SBMPXExpander -->
     <Style x:Key="MPXExpanderStyle"                     BasedOn="{StaticResource DefaultMPXExpanderStyle}"                  TargetType="{x:Type Expander}" />
 
-    <Style x:Key="SBPasswordFieldStyle"                 BasedOn="{StaticResource DefaultSBPasswordFieldStyle}"             TargetType="{x:Type sbc:SBField}" />
+    <Style x:Key="SBPasswordFieldStyle"                 BasedOn="{StaticResource DefaultSBPasswordFieldStyle}"             TargetType="{x:Type rkt:SBField}" />
 </ResourceDictionary>

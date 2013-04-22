@@ -16,7 +16,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sbx="clr-namespace:SBXA.UI.WPFControls.SBXceed"
                     xmlns:sbdebug="clr-namespace:SBXA.UI.WPFControls.SBDebug"
-                    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+                    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
                     xmlns:sbce="clr-namespace:SBXA.UI.WPFControls.MarkupExtensions"
                     xmlns:sbs="http://schemas.sbxa.com/Shared"
                     xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
@@ -67,7 +67,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     ************************** -->
     <Style x:Key="baseFixedColumnSplitterStyle"
           TargetType="xcdg:FixedColumnSplitter">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="baseFixedColumnSplitterStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="baseFixedColumnSplitterStyle" />
     </Style>
 
     <!--**************************
@@ -77,7 +77,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:FixedColumnSplitter"
           BasedOn="{StaticResource baseFixedColumnSplitterStyle}">
         
-        <Setter Property="sbc:SBUISupport.StyleName" Value="rowSplitterStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="rowSplitterStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
@@ -91,7 +91,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:FixedColumnSplitter"
           BasedOn="{StaticResource baseFixedColumnSplitterStyle}">
         
-        <Setter Property="sbc:SBUISupport.StyleName" Value="columnManagerRowSplitterStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="columnManagerRowSplitterStyle" />
 
     </Style>
 
@@ -102,7 +102,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:FixedColumnSplitter"
           BasedOn="{StaticResource baseFixedColumnSplitterStyle}">
         
-        <Setter Property="sbc:SBUISupport.StyleName" Value="statRowSplitterStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="statRowSplitterStyle" />
 
         <!-- For aesthetic reasons, the FixedColumnSplitter is not shown in the StatRow. -->
         <Setter Property="Template"
@@ -116,7 +116,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="cellErrorStyle"
           TargetType="xcdg:Cell">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="cellErrorStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="cellErrorStyle" />
 
         <Setter Property="Background"
               Value="{StaticResource errorBackgroundBrush}"/>
@@ -139,7 +139,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGridControlStyle"
           TargetType="xcdg:DataGridControl">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGridControlStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGridControlStyle" />
 
         <Setter Property="BorderBrush"
               Value="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}" />
@@ -175,7 +175,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewRowSelectorPaneStyle"
           TargetType="xcdg:RowSelectorPane">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewRowSelectorPaneStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewRowSelectorPaneStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
@@ -184,7 +184,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
               Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
 
         <!-- Set teh width of the RowSelectorPane on the grid so that the grid width can be calculated if need be. -->
-        <Setter Property="sbc:SBGridControl.RowSelectorWidth" Value="{Binding Path=Width, RelativeSource={RelativeSource Mode=Self}}" />
+        <Setter Property="rkt:SBGridControl.RowSelectorWidth" Value="{Binding Path=Width, RelativeSource={RelativeSource Mode=Self}}" />
     </Style>
 
     <!--**************************
@@ -195,7 +195,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewRowSelectorStyle"
           TargetType="xcdg:RowSelector">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="insertionRowTypeConverter" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="insertionRowTypeConverter" />
 
         <!-- Set the RowSelector's background to Transparent to make it hit-testable
            while preserving the background drawn by the underlying RowSelectorPane. -->
@@ -271,7 +271,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewRowStyle"
           TargetType="xcdg:Row">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewRowStyle" />
 
         <Setter Property="FocusVisualStyle"
              Value="{StaticResource tableViewRowFocusVisualStyle}"/>
@@ -313,7 +313,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
         <Setter Property="Template">
             <Setter.Value>
                 <PriorityBinding FallbackValue="{StaticResource tableViewRowTemplate}">
-                    <Binding Path="(sbx:SBXGridControl.DataRowTemplate)" Mode="OneWay" RelativeSource="{RelativeSource  Mode=FindAncestor, AncestorType={x:Type sbx:SBXGridControl}}" Converter="{StaticResource SBUnsetValueConverter}"/>
+                    <Binding Path="(rkt:SBXGridControl.DataRowTemplate)" Mode="OneWay" RelativeSource="{RelativeSource  Mode=FindAncestor, AncestorType={x:Type rkt:SBXGridControl}}" Converter="{StaticResource SBUnsetValueConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
@@ -357,13 +357,13 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:DataRow"
           BasedOn="{StaticResource tableViewSBXGridViewRowStyle}">
         
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewDataRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewDataRowStyle" />
         
         <!-- The row height may need to be adjusted to match the cell height for character col and row positioning. -->
         <Setter Property="Height">
             <Setter.Value>
-                    <Binding Path="(sbx:SBXGridControl.RowHeight)" 
-                             RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type sbx:SBXGridControl}}" 
+                    <Binding Path="(rkt:SBXGridControl.RowHeight)" 
+                             RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBXGridControl}}" 
                              Mode="OneWay"
                              Converter="{StaticResource SBConverter}"/>
             </Setter.Value>
@@ -378,7 +378,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:DataRow"
           BasedOn="{StaticResource tableViewSBXGridViewDataRowStyle}">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXSCGridViewDataRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXSCGridViewDataRowStyle" />
 
         <Setter Property="SelectionBackground"
               Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
@@ -395,7 +395,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:InsertionRow"
           BasedOn="{StaticResource tableViewSBXGridViewDataRowStyle}">
         
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewInsertionRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewInsertionRowStyle" />
 
         <Style.Triggers>
             <Trigger Property="IsCurrent"
@@ -425,7 +425,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:ColumnManagerRow"
           BasedOn="{StaticResource tableViewSBXGridViewRowStyle}">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewColumnManagerRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewColumnManagerRowStyle" />
 
         <!-- Use a different background and foreground than the base Row style. -->
         <Setter Property="Background"
@@ -446,13 +446,13 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
         <Setter Property="Template">
             <Setter.Value>
                 <PriorityBinding FallbackValue="{StaticResource tableViewColumnManagerRowTemplate}">
-                    <Binding Path="(sbx:SBXGridControl.ColumnManagerRowTemplate)" Mode="OneWay" RelativeSource="{RelativeSource  Mode=FindAncestor, AncestorType={x:Type sbx:SBXGridControl}}" Converter="{StaticResource SBUnsetValueConverter}"/>
+                    <Binding Path="(rkt:SBXGridControl.ColumnManagerRowTemplate)" Mode="OneWay" RelativeSource="{RelativeSource  Mode=FindAncestor, AncestorType={x:Type rkt:SBXGridControl}}" Converter="{StaticResource SBUnsetValueConverter}"/>
                 </PriorityBinding>
             </Setter.Value>
         </Setter>
 
         <!-- Disable sorting if there are editable columns. E11162*USA. -->
-        <Setter Property="AllowSort" Value="{Binding Path=(sbc:SBGridControl.EditableColumnCount), 
+        <Setter Property="AllowSort" Value="{Binding Path=(rkt:SBGridControl.EditableColumnCount), 
             FallbackValue=False, 
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type xcdg:DataGridControl}},
             Converter={StaticResource SBConverter}, ConverterParameter=Reverse}" />
@@ -533,7 +533,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
 
             <!-- The PART_CellsHost part designates the Panel to which this Row's Cells should be added.-->
             <!--<xcdg:FixedCellPanel x:Name="PART_CellsHost"
-                                 sbc:SBUISupport.StyleName="SBXInterleavedStatRowTemplate"
+                                 rkt:SBUISupport.StyleName="SBXInterleavedStatRowTemplate"
                                Grid.Column="3"
                                ColumnStretchMinWidth="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.DataGridContext).ColumnStretchMinWidth}"
                                ColumnStretchMode="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.DataGridContext).ColumnStretchMode}"
@@ -544,13 +544,13 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
                                FixedColumnDropMarkPen="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.DataGridContext).FixedColumnDropMarkPen}"
                                Margin="{TemplateBinding BorderThickness}" />-->
             
-            <sbc:SBInterleavedGridLayout x:Name="PART_CellsHost"
+            <rkt:SBInterleavedGridLayout x:Name="PART_CellsHost"
                                          Margin="{TemplateBinding BorderThickness}" 
                                          Grid.Column="1"
                                          Grid.Row="0"
                                          ShowGridLines="False"
-                                         sbc:SBCharacterLayout.ColumnWidth="{Binding Path=(sbc:SBCharacterLayout.ColumnWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbx:SBXGridControl}}, Converter={StaticResource SBUnsetValueConverter}}"
-                                         sbc:SBCharacterLayout.RowHeight="{Binding Path=(sbc:SBCharacterLayout.RowHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbx:SBXGridControl}}, Converter={StaticResource SBUnsetValueConverter}}"
+                                         rkt:SBCharacterLayout.ColumnWidth="{Binding Path=(rkt:SBCharacterLayout.ColumnWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBXGridControl}}, Converter={StaticResource SBUnsetValueConverter}}"
+                                         rkt:SBCharacterLayout.RowHeight="{Binding Path=(rkt:SBCharacterLayout.RowHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBXGridControl}}, Converter={StaticResource SBUnsetValueConverter}}"
                                          />
         </Grid>
 
@@ -584,7 +584,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:StatRow"
           BasedOn="{StaticResource tableViewSBXGridViewRowStyle}">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewStatRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewStatRowStyle" />
 
         <Setter Property="xcdg:TableView.FixedColumnSplitterStyle"
               Value="{StaticResource statRowSplitterStyle}"/>
@@ -601,7 +601,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
             <!-- trigger to use a different template for a fixed footers row if the grid is interleaved and not using pixel positioning. (eCase 40842*USA)-->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMvEditControl}}, Path=(sbc:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMvEditControl}}, Path=(rkt:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
                     <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.ParentDataGridControl).TemplatedParent.GuiObjectDefinition.FieldDefinition.IsInterleaved}" Value="True" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template" Value="{StaticResource SBXInterleavedStatRowTemplate}"/>
@@ -618,7 +618,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:FilterRow"
           BasedOn="{StaticResource tableViewSBXGridViewRowStyle}">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewFilterRowStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewFilterRowStyle" />
 
         <Style.Triggers>
             <Trigger Property="xcdg:GroupLevelIndicatorPane.GroupLevel"
@@ -637,7 +637,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewCellStyle"
           TargetType="xcdg:Cell">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewCellStyle"  />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewCellStyle"  />
         <!-- The following line caused the field to flash white, before taking on the color set in the field style. This only occurred in the -->
         <!-- interleaved grids. (kp Feb 4, 2010) -->
         <!-- <Setter Property="CurrentBackground" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />-->
@@ -694,12 +694,12 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:DataCell"
           BasedOn="{StaticResource tableViewSBXGridViewCellStyle}">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewDataCellStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewDataCellStyle" />
         
         <!-- Removes the border around the cell -->
         <Setter Property="Padding" Value="0,0,1,0" />
 
-        <Setter Property="sbx:SBXGridControl.SetCellData" Value="{Binding Path=.}" />
+        <Setter Property="rkt:SBXGridControl.SetCellData" Value="{Binding Path=.}" />
 
     </Style>
 
@@ -710,14 +710,14 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
           TargetType="xcdg:InsertionCell"
           BasedOn="{StaticResource tableViewSBXGridViewDataCellStyle}" >
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewInsertionCellStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewInsertionCellStyle" />
         
     </Style>
 
-    <sbx:SBXContextMenu x:Key="ColumnHeaderContextMenu">
-        <MenuItem Header="Lock Column" Command="sbc:SBCommands.SBLockGridColumnCommand" IsCheckable="True" 
-                  IsChecked="{Binding Path=(sbx:SBXColumn.IsFixed), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbx:SBXContextMenu}}}" />
-    </sbx:SBXContextMenu>
+    <rkt:SBXContextMenu x:Key="ColumnHeaderContextMenu">
+        <MenuItem Header="Lock Column" Command="rkt:SBCommands.SBLockGridColumnCommand" IsCheckable="True" 
+                  IsChecked="{Binding Path=(rkt:SBXColumn.IsFixed), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBXContextMenu}}}" />
+    </rkt:SBXContextMenu>
 
     <!--**************************
     * TEMPLATE: ColumnManagerCell 
@@ -923,7 +923,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
             </MultiDataTrigger>
 
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True" >
-                <Setter Property="sbx:SBXGridControl.MouseOverControl" Value="{Binding RelativeSource={RelativeSource Self}, Path=.}" />
+                <Setter Property="rkt:SBXGridControl.MouseOverControl" Value="{Binding RelativeSource={RelativeSource Self}, Path=.}" />
             </DataTrigger>
             
             <!-- Display FilterToggleButton Trigger to display AutoFilterGlyph -->
@@ -1020,7 +1020,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
             <!-- make sure the column resize is disabled if we are using character row layout. -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMvEditControl}}, Path=(sbc:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMvEditControl}}, Path=(rkt:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
                     <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.ParentDataGridControl).TemplatedParent.GuiObjectDefinition.FieldDefinition.IsInterleaved}" Value="True" />
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="PART_ColumnResizerThumb"
@@ -1049,7 +1049,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewColumnManagerCellStyle"
           TargetType="xcdg:ColumnManagerCell">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewColumnManagerCellStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewColumnManagerCellStyle" />
 
         <!-- Set the Cell's background to Transparent to make it hit-testable
            while preserving the background drawn by the underlying Row. -->
@@ -1081,7 +1081,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
             <!-- eCase 12255*USA, when using character layout the ColumnManager must not have the width set otherwise it truncates right justified headings. -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMvEditControl}}, Path=(sbc:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMvEditControl}}, Path=(rkt:SBControl.UsePixelPositioning), Mode=OneWay}" Value="False" />
                     <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=(xcdg:DataGridControl.ParentDataGridControl).TemplatedParent.GuiObjectDefinition.FieldDefinition.IsInterleaved}" Value="True" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Width" Value="NaN"/>
@@ -1097,7 +1097,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewStatCellStyle"
           TargetType="xcdg:StatCell">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewStatCellStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewStatCellStyle" />
 
         <!-- Set the Cell's background to Transparent to make it hit-testable
            while preserving the background drawn by the underlying Row. -->
@@ -1129,7 +1129,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewFilterCellStyle"
           TargetType="xcdg:FilterCell">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewFilterCellStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewFilterCellStyle" />
 
         <!-- In TableView, each Cell has the same width as its ParentColum's ActualWidth -->
         <Setter Property="Width"
@@ -1167,7 +1167,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGroupByControlStyle"
           TargetType="xcdg:GroupByControl">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupByControlStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupByControlStyle" />
 
         <!-- If we don't specify a MinHeight, the default "size-to-content" behavior will arrange 
            the control with a Height of 0, which makes it invisible and unusable.
@@ -1208,7 +1208,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGroupByItemStyle"
           TargetType="xcdg:GroupByItem">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupByItemStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupByItemStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
@@ -1230,7 +1230,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGroupHeaderControlStyle"
           TargetType="xcdg:GroupHeaderControl">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupHeaderControlStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupHeaderControlStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
@@ -1271,7 +1271,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGroupLevelIndicatorStyle"
           TargetType="xcdg:GroupLevelIndicator">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupLevelIndicatorStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupLevelIndicatorStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
@@ -1299,7 +1299,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewDetailIndicatorStyle"
           TargetType="xcdg:DetailIndicator">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewDetailIndicatorStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewDetailIndicatorStyle" />
 
         <Setter Property="Background"
               Value="{x:Null}" />
@@ -1318,7 +1318,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewGroupLevelIndicatorPaneStyle"
           TargetType="xcdg:GroupLevelIndicatorPane">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupLevelIndicatorPaneStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewGroupLevelIndicatorPaneStyle" />
 
         <Setter Property="Template"
               Value="{StaticResource tableViewGroupLevelIndicatorPaneTemplate}"/>
@@ -1348,7 +1348,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewHierarchicalGroupLevelIndicatorPaneStyle"
           TargetType="xcdg:HierarchicalGroupLevelIndicatorPane">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupLevelIndicatorPaneStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupLevelIndicatorPaneStyle" />
 
         <Setter Property="Template"
               Value="{StaticResource tableViewHierarchicalGroupLevelIndicatorPaneTemplate}"/>
@@ -1361,7 +1361,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewHierarchicalGroupByControlNodeStyle"
           TargetType="xcdg:HierarchicalGroupByControlNode">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByControlNodeStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByControlNodeStyle" />
 
         <Setter Property="StairHeight"
               Value="0"/>
@@ -1389,7 +1389,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewHierarchicalGroupByControlStyle"
           TargetType="xcdg:HierarchicalGroupByControl">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByControlStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByControlStyle" />
 
         <!-- If we don't specify a MinHeight, the default "size-to-content" behavior will arrange 
            the control with a Height of 0, which makes it invisible and unusable.
@@ -1459,7 +1459,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewHierarchicalGroupByItemStyle"
           TargetType="xcdg:HierarchicalGroupByItem">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByItemStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewHierarchicalGroupByItemStyle" />
 
         <Setter Property="Background"
               Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
@@ -1484,7 +1484,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewAutoFilterControlStyle"
           TargetType="xcdg:AutoFilterControl">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewAutoFilterControlStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewAutoFilterControlStyle" />
 
         <Setter Property="Template"
               Value="{StaticResource tableViewAutoFilterControlTemplate}"/>
@@ -1496,7 +1496,7 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <Style x:Key="tableViewSBXGridViewScrollTipStyle"
           TargetType="xcdg:ScrollTip">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewScrollTipStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewScrollTipStyle" />
 
         <Setter Property="Template"
               Value="{StaticResource scrollTipTemplate}"/>
@@ -1522,9 +1522,9 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <!-- =================================================================== -->
 
     <Style x:Key="tableViewSBXGridViewDefaultValues"
-          TargetType="sbx:SBXGridView">
+          TargetType="rkt:SBXGridView">
 
-        <Setter Property="sbc:SBUISupport.StyleName" Value="tableViewSBXGridViewDefaultValues" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="tableViewSBXGridViewDefaultValues" />
 
         <Setter Property="HorizontalGridLineBrush"
               Value="{StaticResource gridLineBrush}" />
@@ -1588,8 +1588,8 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
     <!-- =================================================================== -->
 
     <!-- Added kp Sept 10, 2008 -->
-    <Style x:Key="DefaultSBXTableViewStyle" BasedOn="{StaticResource tableViewSBXGridViewDefaultValues}" TargetType="sbx:SBXGridView">
-        <Setter Property="sbc:SBUISupport.StyleName"            Value="DefaultSBXTableViewStyle" />
+    <Style x:Key="DefaultSBXTableViewStyle" BasedOn="{StaticResource tableViewSBXGridViewDefaultValues}" TargetType="rkt:SBXGridView">
+        <Setter Property="rkt:SBUISupport.StyleName"            Value="DefaultSBXTableViewStyle" />
         <Setter Property="UseDefaultHeadersFooters"             Value="False" />
         <Setter Property="KeyboardNavigation.TabNavigation"     Value="Local"/>
         <Setter Property="ShowFixedColumnSplitter"              Value="False" />
@@ -1598,124 +1598,124 @@ Sept 20, 2011   SCW     SBXA-4728       tableViewSBXGridViewFilterRowStyle   Add
         <Setter Property="GroupByControlLocation"               Value="None" />
         <Setter Property="ShowRowSelectorPane" Value="{Binding Path=ShowRowSelector, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay }"/>
         <Setter Property="ColumnManagerRowLocation" Value="{Binding Path=GuiObjectDefinition.ShowHeadings, 
-                                                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMvEditControl}}, 
+                                                          RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMvEditControl}}, 
                                                           Converter={StaticResource SBConverter},
                                                           Mode=OneWay }" />
-        <!--<Setter Property="sbc:SBGridControl.VerticalScrollBar"  Value="{sbce:SBFindElement ElementName=PART_VerticalScrollBar}" />-->
+        <!--<Setter Property="rkt:SBGridControl.VerticalScrollBar"  Value="{rkt:SBFindElement ElementName=PART_VerticalScrollBar}" />-->
     </Style>
 
     <!-- Changed from BasedOn="{StaticResource tableViewSBXGridViewDefaultValues}" to BasedOn="{StaticResource DefaultSBXTableViewStyle}" kp Sept 10, 2008 -->
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme}"
-          TargetType="sbx:SBXGridView"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme}"
+          TargetType="rkt:SBXGridView"
           BasedOn="{StaticResource DefaultSBXTableViewStyle}" />
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataGridControl}"
           TargetType="xcdg:DataGridControl"
           BasedOn="{StaticResource tableViewSBXGridViewGridControlStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:RowSelectorPane}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:RowSelectorPane}"
           TargetType="xcdg:RowSelectorPane"
           BasedOn="{StaticResource tableViewSBXGridViewRowSelectorPaneStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:RowSelector}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:RowSelector}"
           TargetType="xcdg:RowSelector"
           BasedOn="{StaticResource tableViewSBXGridViewRowSelectorStyle}" />
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Row}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Row}"
           TargetType="xcdg:Row"
           BasedOn="{StaticResource tableViewSBXGridViewRowStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataRow}"
           TargetType="xcdg:DataRow"
           BasedOn="{StaticResource tableViewSBXGridViewDataRowStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:InsertionRow}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:InsertionRow}"
           TargetType="xcdg:InsertionRow"
           BasedOn="{StaticResource tableViewSBXGridViewInsertionRowStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerRow}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerRow}"
           TargetType="xcdg:ColumnManagerRow"
           BasedOn="{StaticResource tableViewSBXGridViewColumnManagerRowStyle}">
         <Setter Property="BorderThickness" Value="0" />
     </Style>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:StatRow}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:StatRow}"
           TargetType="xcdg:StatRow"
           BasedOn="{StaticResource tableViewSBXGridViewStatRowStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:FilterRow}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:FilterRow}"
           TargetType="xcdg:FilterRow"
           BasedOn="{StaticResource tableViewSBXGridViewFilterRowStyle}" />
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:Cell}"
           TargetType="xcdg:Cell"
           BasedOn="{StaticResource tableViewSBXGridViewCellStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DataCell}"
           TargetType="xcdg:DataCell"
           BasedOn="{StaticResource tableViewSBXGridViewDataCellStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:InsertionCell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:InsertionCell}"
           TargetType="xcdg:InsertionCell"
           BasedOn="{StaticResource tableViewSBXGridViewInsertionCellStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerCell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ColumnManagerCell}"
           TargetType="xcdg:ColumnManagerCell"
           BasedOn="{StaticResource tableViewSBXGridViewColumnManagerCellStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:StatCell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:StatCell}"
           TargetType="xcdg:StatCell"
           BasedOn="{StaticResource tableViewSBXGridViewStatCellStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:FilterCell}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:FilterCell}"
           TargetType="xcdg:FilterCell"
           BasedOn="{StaticResource tableViewSBXGridViewFilterCellStyle}" />
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupByControl}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupByControl}"
           TargetType="xcdg:GroupByControl"
           BasedOn="{StaticResource tableViewSBXGridViewGroupByControlStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupByItem}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupByItem}"
           TargetType="xcdg:GroupByItem"
           BasedOn="{StaticResource tableViewSBXGridViewGroupByItemStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupHeaderControl}"
           TargetType="xcdg:GroupHeaderControl"
           BasedOn="{StaticResource tableViewSBXGridViewGroupHeaderControlStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicator}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicator}"
           TargetType="xcdg:GroupLevelIndicator"
           BasedOn="{StaticResource tableViewSBXGridViewGroupLevelIndicatorStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:DetailIndicator}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:DetailIndicator}"
           TargetType="xcdg:DetailIndicator"
           BasedOn="{StaticResource tableViewSBXGridViewDetailIndicatorStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicatorPane}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:GroupLevelIndicatorPane}"
           TargetType="xcdg:GroupLevelIndicatorPane"
           BasedOn="{StaticResource tableViewSBXGridViewGroupLevelIndicatorPaneStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupLevelIndicatorPane}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupLevelIndicatorPane}"
           TargetType="xcdg:HierarchicalGroupLevelIndicatorPane"
           BasedOn="{StaticResource tableViewSBXGridViewHierarchicalGroupLevelIndicatorPaneStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:AutoFilterControl}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:AutoFilterControl}"
           TargetType="xcdg:AutoFilterControl"
           BasedOn="{StaticResource tableViewSBXGridViewAutoFilterControlStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:ScrollTip}"
           TargetType="xcdg:ScrollTip"
           BasedOn="{StaticResource tableViewSBXGridViewScrollTipStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControlNode}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControlNode}"
           TargetType="xcdg:HierarchicalGroupByControlNode"
           BasedOn="{StaticResource tableViewSBXGridViewHierarchicalGroupByControlNodeStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControl}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByControl}"
           TargetType="xcdg:HierarchicalGroupByControl"
           BasedOn="{StaticResource tableViewSBXGridViewHierarchicalGroupByControlStyle}"/>
 
-    <Style x:Key="{xcdg:ThemeKey TargetViewType=sbx:SBXGridView, ThemeType=sbx:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByItem}"
+    <Style x:Key="{xcdg:ThemeKey TargetViewType=rkt:SBXGridView, ThemeType=rkt:SBXGridViewTheme, TargetElementType=xcdg:HierarchicalGroupByItem}"
           TargetType="xcdg:HierarchicalGroupByItem"
           BasedOn="{StaticResource tableViewSBXGridViewHierarchicalGroupByItemStyle}"/>
 

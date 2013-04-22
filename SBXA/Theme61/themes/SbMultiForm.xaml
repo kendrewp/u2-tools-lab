@@ -11,7 +11,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbe="clr-namespace:SBXA.UI.WPFControls.MarkupExtensions"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:sbs="http://schemas.sbxa.com/Shared"
@@ -21,6 +21,6 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBMultiFormStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBMultiForm}" BasedOn="{StaticResource BaseSBMultiFormStyle}" />
+    <Style TargetType="{x:Type rkt:SBMultiForm}" BasedOn="{StaticResource BaseSBMultiFormStyle}" />
 
 </ResourceDictionary>

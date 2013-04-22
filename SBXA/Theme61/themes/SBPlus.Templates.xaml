@@ -7,7 +7,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     >
     <!-- *********************************************************** -->
     <!-- This file contains the templates used by SBPlus, i.e. those -->
@@ -19,14 +19,14 @@
     <!-- Name: SBPageNavigationTemplate                                                       -->
     <!-- Function: This template lays out the controls when the client is using Page mode.    -->
     <!-- ************************************************************************************ -->
-    <ControlTemplate x:Key="SBPageNavigationTemplate" TargetType="{x:Type sbc:SBPlus}">
+    <ControlTemplate x:Key="SBPageNavigationTemplate" TargetType="{x:Type rkt:SBPlus}">
         <!-- Main SB+ Window -->
 
         <ContentControl x:Name="PART_MainSBPlusContainer"
                         Opacity="1"
                         Focusable="False" 
                         Style="{DynamicResource MainSBPlusContainerStyle}" 
-                        sbc:SBUISupport.TemplateName="SBPageNavigationTemplate"
+                        rkt:SBUISupport.TemplateName="SBPageNavigationTemplate"
                         >
 <!--            HorizontalAlignment="Center" -->
 <!--                        VerticalAlignment="Center"-->
@@ -40,20 +40,20 @@
 
                 <DockPanel LastChildFill="True">
                     
-                    <sbc:SBStatusBar x:Name="PART_StatusBar" 
+                    <rkt:SBStatusBar x:Name="PART_StatusBar" 
                                      DockPanel.Dock="Bottom" 
                                      VerticalAlignment="Bottom"
                                      Visibility="Visible"
                                      IsProgressBar="{Binding Path=IsProgressBar, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
                                      IsHelpMessage="False"
                                      Message="{Binding Path=ServerStatusBarMessage, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                     sbc:SBUISupport.ZoomValue="{Binding Path=(sbc:SBUISupport.ZoomValue), Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                     rkt:SBUISupport.ZoomValue="{Binding Path=(rkt:SBUISupport.ZoomValue), Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                         />
                     
                     <Grid DockPanel.Dock="Top">
 
 
-                        <sbc:SBMenuPresenter x:Name="PART_SBMainMenuPresenter"
+                        <rkt:SBMenuPresenter x:Name="PART_SBMainMenuPresenter"
                                              VerticalAlignment="Top"
                                              HorizontalAlignment="Stretch"
                                              Style="{DynamicResource SBMenuPresenterStyle}"
@@ -78,9 +78,9 @@
                                                 HorizontalAlignment="Stretch"
                                                 VerticalAlignment="Stretch"
                                                 IsTabStop="False"
-                                                sbc:SBForm.IsMaximizable="False"
-                                                sbc:SBForm.IsMinimizable="False"                                              
-                                                Content="{Binding Path=CurrentTree, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus} }}"
+                                                rkt:SBForm.IsMaximizable="False"
+                                                rkt:SBForm.IsMinimizable="False"                                              
+                                                Content="{Binding Path=CurrentTree, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus} }}"
                                         />
 
                                 <GridSplitter x:Name="PART_SBMPXTreeSplitter"
@@ -109,15 +109,15 @@
 <!--                                            HorizontalAlignment="Center"-->
 <!--                                            VerticalAlignment="Center"-->
 <!--                                            IsTabStop="False"-->
-<!--                                            Content="{Binding Path=CurrentForm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus} }}"-->
+<!--                                            Content="{Binding Path=CurrentForm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus} }}"-->
 <!--                                        />-->
 
 
-                            <sbc:SBPageContentManager x:Name="PART_SBFormContainer"
+                            <rkt:SBPageContentManager x:Name="PART_SBFormContainer"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Center"
                                                       IsTabStop="False"
-                                                      CurrentForm="{Binding Path=CurrentForm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus} }}"
+                                                      CurrentForm="{Binding Path=CurrentForm, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus} }}"
                                                       DisplayFormStack="False"
                                                       />
                         </ScrollViewer>
@@ -135,8 +135,8 @@
             
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="true"/>
-                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static sbc:SBPlus.Current}}" Value="false"/>
+                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="true"/>
+                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static rkt:SBPlus.Current}}" Value="false"/>
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="PART_StatusBar" Property="MessageVisibility" Value="Hidden" />
                 <Setter TargetName="PART_StatusBar" Property="ProgressBarVisibility" Value="Hidden" />
@@ -144,17 +144,17 @@
 
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="true"/>
-                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static sbc:SBPlus.Current}}" Value="True"/>
+                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="true"/>
+                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static rkt:SBPlus.Current}}" Value="True"/>
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="PART_StatusBar" Property="ProgressMonitor" Value="{Binding Path=ProgressMonitor, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
             </MultiDataTrigger>
 
-            <DataTrigger Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="false">
+            <DataTrigger Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="false">
                 <Setter TargetName="PART_StatusBar" Property="ProgressMonitor" Value="{Binding Path=ProgressMonitor, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
             </DataTrigger>
 
-            <DataTrigger Binding="{Binding Path=HelpMessage, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
+            <DataTrigger Binding="{Binding Path=HelpMessage, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
                 <Setter TargetName="PART_StatusBar" Property="IsHelpMessage" Value="True" />
                 <Setter TargetName="PART_StatusBar" Property="Message" Value="{Binding Path=SBPlus.HelpMessage, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SBXamlConverter}}" />
             </DataTrigger>
@@ -168,10 +168,10 @@
     <!-- Name: SBWindowNavigationTemplate                                                     -->
     <!-- Function: This template lays out the controls when the client is using Windows mode. -->
     <!-- ************************************************************************************ -->
-    <ControlTemplate x:Key="SBWindowNavigationTemplate" TargetType="{x:Type sbc:SBPlus}">
+    <ControlTemplate x:Key="SBWindowNavigationTemplate" TargetType="{x:Type rkt:SBPlus}">
 
         <ContentControl x:Name="PART_MainSBPlusContainer"
-                        sbc:SBUISupport.TemplateName="SBWindowNavigationTemplate"
+                        rkt:SBUISupport.TemplateName="SBWindowNavigationTemplate"
                         Style="{DynamicResource MainSBPlusContainerStyle}"
                         >
 
@@ -190,18 +190,18 @@
 
 
 
-                    <sbc:SBStatusBar x:Name="PART_StatusBar" 
+                    <rkt:SBStatusBar x:Name="PART_StatusBar" 
                                      DockPanel.Dock="Bottom" 
                                      VerticalAlignment="Bottom"
                                      Visibility="Visible"
                                      IsHelpMessage="False"
                                      Message="{Binding Path=ServerStatusBarMessage, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                     sbc:SBUISupport.ZoomValue="{Binding Path=(sbc:SBUISupport.ZoomValue), Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                     rkt:SBUISupport.ZoomValue="{Binding Path=(rkt:SBUISupport.ZoomValue), Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                      />
 
 
 
-                    <sbc:SBMenuPresenter x:Name="PART_SBMenuPresenter"
+                    <rkt:SBMenuPresenter x:Name="PART_SBMenuPresenter"
                                          DockPanel.Dock="Top" 
                                          VerticalAlignment="Top"
                                          HorizontalAlignment="Stretch"
@@ -226,9 +226,9 @@
                                                 HorizontalAlignment="Stretch"
                                                 VerticalAlignment="Stretch"
                                                 IsTabStop="False"
-                                                sbc:SBForm.IsMaximizable="False"
-                                                sbc:SBForm.IsMinimizable="False"                                                  
-                                                Content="{Binding Path=CurrentTree, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus} }}"
+                                                rkt:SBForm.IsMaximizable="False"
+                                                rkt:SBForm.IsMinimizable="False"                                                  
+                                                Content="{Binding Path=CurrentTree, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus} }}"
                                         />
 
                                 <GridSplitter x:Name="PART_SBMPXTreeSplitter"
@@ -263,8 +263,8 @@
 
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="true"/>
-                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static sbc:SBPlus.Current}}" Value="false"/>
+                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="true"/>
+                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static rkt:SBPlus.Current}}" Value="false"/>
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="PART_StatusBar" Property="MessageVisibility" Value="Hidden" />
                 <Setter TargetName="PART_StatusBar" Property="ProgressBarVisibility" Value="Hidden" />
@@ -272,17 +272,17 @@
 
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="true"/>
-                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static sbc:SBPlus.Current}}" Value="True"/>
+                    <Condition Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="true"/>
+                    <Condition Binding="{Binding Path=IsCurrentForm, Source={x:Static rkt:SBPlus.Current}}" Value="True"/>
                 </MultiDataTrigger.Conditions>
                 <Setter TargetName="PART_StatusBar" Property="ProgressMonitor" Value="{Binding Path=ProgressMonitor, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
             </MultiDataTrigger>
 
-            <DataTrigger Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static sbc:SBPlus.Current}}" Value="false">
+            <DataTrigger Binding="{Binding Path=SBUserPreferences.SelfContainedForms, Source={x:Static rkt:SBPlus.Current}}" Value="false">
                 <Setter TargetName="PART_StatusBar" Property="ProgressMonitor" Value="{Binding Path=ProgressMonitor, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
             </DataTrigger>
 
-            <DataTrigger Binding="{Binding Path=HelpMessage, Source={x:Static sbc:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
+            <DataTrigger Binding="{Binding Path=HelpMessage, Source={x:Static rkt:SBPlus.Current}, Converter={StaticResource SBIsNullOrEmptyConverter}}" Value="False">
                 <Setter TargetName="PART_StatusBar" Property="IsHelpMessage" Value="True" />
                 <Setter TargetName="PART_StatusBar" Property="Message" Value="{Binding Path=SBPlus.HelpMessage, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SBXamlConverter}}" />
             </DataTrigger>

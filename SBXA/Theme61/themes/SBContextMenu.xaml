@@ -6,19 +6,19 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     >
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/BaseSBMenuStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBContextMenu}" >
+    <Style TargetType="{x:Type rkt:SBContextMenu}" >
         <Setter Property="ItemsSource" Value= "{Binding Path=MenuDefinition.MenuOptions, RelativeSource={RelativeSource Self}}" />
         <Setter Property="ItemTemplate" Value="{DynamicResource SBMenuItemTemplate}"/>
-        <Setter Property="sbc:SBUISupport.StyleName" Value="BaseSBContextMenuStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="BaseSBContextMenuStyle" />
 
-        <Setter Property="sbc:SBUISupport.TemplateName" Value="ItemTemplate = SBMenuItemTemplate" />
+        <Setter Property="rkt:SBUISupport.TemplateName" Value="ItemTemplate = SBMenuItemTemplate" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -45,9 +45,9 @@
         <Style.Resources>
 
             <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}" >
-                <Setter Property="sbc:SBUISupport.StyleName" Value="Implicit style, in BaseSBContextMenuStyle" />
+                <Setter Property="rkt:SBUISupport.StyleName" Value="Implicit style, in BaseSBContextMenuStyle" />
                 <Style.Triggers>
-                    <DataTrigger Binding="{Binding Path=(sbc:SBSpellCheck.IsSpellCheckWord), RelativeSource={RelativeSource Mode=Self}}" Value="true">
+                    <DataTrigger Binding="{Binding Path=(rkt:SBSpellCheck.IsSpellCheckWord), RelativeSource={RelativeSource Mode=Self}}" Value="true">
                         <Setter Property="FontWeight" Value="Bold" />
                     </DataTrigger>
                 </Style.Triggers>
@@ -59,9 +59,9 @@
 
     <!--                            <StackPanel.Resources>-->
     <!--                                <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource BaseMenuItemStyle}" >-->
-    <!--                                    <Setter Property="sbc:SBUISupport.StyleName" Value="Implicit style, in BaseSBContextMenuStyle" />-->
+    <!--                                    <Setter Property="rkt:SBUISupport.StyleName" Value="Implicit style, in BaseSBContextMenuStyle" />-->
     <!--                                    <Style.Triggers>-->
-    <!--                                        <DataTrigger Binding="{Binding Path=(sbc:SBSpellCheck.IsSpellCheckWord), RelativeSource={RelativeSource Mode=Self}}" Value="true">-->
+    <!--                                        <DataTrigger Binding="{Binding Path=(rkt:SBSpellCheck.IsSpellCheckWord), RelativeSource={RelativeSource Mode=Self}}" Value="true">-->
     <!--                                            <Setter Property="FontWeight" Value="Bold" />-->
     <!--                                        </DataTrigger>-->
     <!--                                    </Style.Triggers>-->

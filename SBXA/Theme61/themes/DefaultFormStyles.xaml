@@ -9,7 +9,7 @@
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     xmlns:sbs="http://schemas.sbxa.com/Shared"
     >
@@ -19,11 +19,11 @@
 
     <!-- DefaultSBFormContentHeaderBorderStyle -->
     <Style x:Key="DefaultSBFormContentHeaderBorderStyle" TargetType="{x:Type Border}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBFormContentHeaderBorderStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBFormContentHeaderBorderStyle" />
         <Setter Property="Margin" Value="4,3.635,4,3.635" />
         <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Width" Value="Auto" />
-        <Setter Property="Height" Value="{x:Static sbs:GenericConstants.DEFAULT_FORM_TITLE_HEIGHT}"  />
+        <Setter Property="Height" Value="{x:Static rkt:GenericConstants.DEFAULT_FORM_TITLE_HEIGHT}"  />
         <Setter Property="BorderBrush" Value="#00519CEE" />
         <Setter Property="BorderThickness" Value="1,1,1,0" />
         <Setter Property="CornerRadius" Value="3.5,3.5,0,0" />
@@ -40,21 +40,21 @@
 
     <!-- DefaultSBFormBorderStyle -->
     <Style x:Key="DefaultSBFormBorderStyle" TargetType="{x:Type Border}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBFormBorderStyle" />
-        <Setter Property="Margin" Value="{Binding Path=(sbc:SBForm.FormBorderMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
-<!-- SBXA-3863         <Setter Property="IsEnabled" Value="{Binding Path=(sbc:SBForm.IsSBEnabled), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" /> -->
-        <Setter Property="Background" Value="{Binding Path=(sbc:SBForm.FormBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBFormBorderStyle" />
+        <Setter Property="Margin" Value="{Binding Path=(rkt:SBForm.FormBorderMargin), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
+<!-- SBXA-3863         <Setter Property="IsEnabled" Value="{Binding Path=(rkt:SBForm.IsSBEnabled), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" /> -->
+        <Setter Property="Background" Value="{Binding Path=(rkt:SBForm.FormBackground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
     </Style>
 
     <!-- DefaultSBFormContentStyle -->
     <Style x:Key="DefaultSBFormContentStyle" TargetType="{x:Type ContentPresenter}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBFormContentStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBFormContentStyle" />
 <!--        
-        <Setter Property="MinWidth" Value="{Binding Path=MinWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
+        <Setter Property="MinWidth" Value="{Binding Path=MinWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
  -->
         <!-- The following two lines are no longer required as we have changed the scaling/zooming of the forms. -->
-<!--                <Setter Property="Width" Value="{Binding Path=(sbc:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" /> -->
-<!--                <Setter Property="Height" Value="{Binding Path=(sbc:SBForm.FormHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" /> -->
+<!--                <Setter Property="Width" Value="{Binding Path=(rkt:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" /> -->
+<!--                <Setter Property="Height" Value="{Binding Path=(rkt:SBForm.FormHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" /> -->
     </Style>
 
     <!-- DefaultSBFormButtonStyle -->
@@ -99,7 +99,7 @@
                                    Grid.Column="0" 
                                    FontWeight="Bold" 
                                    Opacity="1"
-                                   Text="{Binding Path=(sbc:SBGUIAttribute.SBTitle), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}},
+                                   Text="{Binding Path=(rkt:SBGUIAttribute.SBTitle), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}},
                                                   Mode=OneWay, Converter={StaticResource SBLanguageConverter}}" 
                                    HorizontalAlignment="Left"
                                    TextTrimming="CharacterEllipsis"
@@ -113,7 +113,7 @@
     <!-- DefaultSBFormTitleStyle -->
     <Style x:Key="DefaultSBFormTitleStyle" TargetType="{x:Type Control}">
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Width" Value="{Binding Path=(sbc:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
+        <Setter Property="Width" Value="{Binding Path=(rkt:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Control}">
@@ -129,44 +129,44 @@
                                     Width="18" Height="18"
                                     x:Name="PART_SBFormMinimizeButton"
                                     Style="{DynamicResource SBMinimizeButtonStyle}" 
-                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}"
-                                    Margin="1,1,1,1" IsTabStop="False" Command="sbc:SBCommands.SBMinimizeWindowCommand"/>
+                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}"
+                                    Margin="1,1,1,1" IsTabStop="False" Command="rkt:SBCommands.SBMinimizeWindowCommand"/>
                             <Button Grid.Column="1"
                                     ToolTip="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=MaximizeForm}"
                                     Width="18" Height="18"
                                     x:Name="PART_SBFormMaximizeButton"
-                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}"
-                                    Style="{DynamicResource SBMaximizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="sbc:SBCommands.SBMaximizeWindowCommand"/>
+                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}"
+                                    Style="{DynamicResource SBMaximizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="rkt:SBCommands.SBMaximizeWindowCommand"/>
                             <Button Grid.Column="2"
                                     HorizontalAlignment="Right"
                                     ToolTip="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=CloseForm}"
                                     Width="18" Height="18" x:Name="PART_SBFormCloseButton"
                                     Style="{DynamicResource SBFormCloseButtonStyle}" Margin="2,2,2,2" IsTabStop="False" 
-                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}"
-                                    Command="sbc:SBCommands.SBCloseWindowCommand"/>
+                                    IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}"
+                                    Command="rkt:SBCommands.SBCloseWindowCommand"/>
                         </Grid>
                         <Control x:Name="PART_SBTitle" DockPanel.Dock="Left" Style="{DynamicResource SBTitleStyle}" HorizontalAlignment="Stretch" />
                     </DockPanel>
                     <ControlTemplate.Triggers>
                         <!-- Display Close button -->
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsClosable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="True">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsClosable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="True">
                             <Setter TargetName="PART_SBFormCloseButton" Property="Visibility" Value="Visible" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsClosable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="False">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsClosable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="False">
                             <Setter TargetName="PART_SBFormCloseButton" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                         <!-- Diplay minimizable button -->
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsMinimizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="True">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsMinimizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="True">
                             <Setter TargetName="PART_SBFormMinimizeButton" Property="Visibility" Value="Visible" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsMinimizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="False">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsMinimizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="False">
                             <Setter TargetName="PART_SBFormMinimizeButton" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                         <!-- display maximizable button -->
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsMaximizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="True">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsMaximizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="True">
                             <Setter TargetName="PART_SBFormMaximizeButton" Property="Visibility" Value="Visible" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=(sbc:SBForm.IsMaximizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="False">
+                        <DataTrigger Binding="{Binding Path=(rkt:SBForm.IsMaximizable), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="False">
                             <Setter TargetName="PART_SBFormMaximizeButton" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
@@ -174,7 +174,7 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                             Value="Manual">
                 <Setter Property="Width" Value="NaN" />
             </DataTrigger>
@@ -184,44 +184,44 @@
     <!-- This style if based on work done by Jin Leem in SVL. -->
     <!-- DefaultSBFormContainerStyle -->
     <Style x:Key="DefaultSBFormContainerStyle" TargetType="{x:Type ContentControl}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBFormContainerStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBFormContainerStyle" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
-        <!--<Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />-->
+        <!--<Setter Property="Background" Value="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />-->
 
         <Style.Triggers>
 
             <!-- We have a form with no border -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="false" />
-                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="false" />
-                    <Condition Binding="{Binding Path=(sbc:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=(rkt:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="false" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template" Value="{DynamicResource SBFormWithoutBorderTemplate}" />
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="SBFormWithoutBorderTemplate" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="SBFormWithoutBorderTemplate" />
             </MultiDataTrigger>
 
             <!-- We have a form with border -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="false" />
-                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="false" />
-                    <Condition Binding="{Binding Path=(sbc:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="true" />
+                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=(rkt:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="true" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Template" Value="{DynamicResource SBFormWithBorderTemplate}" />
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="SBFormWithBorderTemplate" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="SBFormWithBorderTemplate" />
             </MultiDataTrigger>
             
             <!-- We have a custom form with border -->
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="false" />
-                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="true" />
-                    <Condition Binding="{Binding Path=(sbc:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}}" Value="true" />
+                    <Condition Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="false" />
+                    <Condition Binding="{Binding Path=IsCustomFormHost, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="true" />
+                    <Condition Binding="{Binding Path=(rkt:SBForm.IsBorderPresent), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}}" Value="true" />
                 </MultiDataTrigger.Conditions>
             
-<!--                <Setter Property="Content" Value="{Binding Path=CustomContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBCustomForm} }}" />-->
+<!--                <Setter Property="Content" Value="{Binding Path=CustomContent, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBCustomForm} }}" />-->
 <!--                <ContentControl Template="{DynamicResource SBFormWithBorderTemplate}">-->
 <!--                    <DockPanel LastChildFill="True">-->
 <!--                        <ContentControl x:Name="MyPlaceHolder" Content="{Binding CustomControl}" />-->
@@ -229,22 +229,22 @@
 <!--                </ContentControl>-->
 
                 <Setter Property="Template" Value="{DynamicResource SBCustomFormWithBorderTemplate}" />
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="SBCustomFormWithBorderTemplate" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="SBCustomFormWithBorderTemplate" />
             </MultiDataTrigger>
             
             <!-- We have a multiform child -->
-            <DataTrigger Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBForm}}}" Value="true">
+            <DataTrigger Binding="{Binding Path=IsMultiFormChild, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBForm}}}" Value="true">
                 <Setter Property="Template" Value="{DynamicResource SBMultiFormChildTemplate}" />
-                <Setter Property="sbc:SBUISupport.TemplateName" Value="SBMultiFormChildTemplate" />
+                <Setter Property="rkt:SBUISupport.TemplateName" Value="SBMultiFormChildTemplate" />
             </DataTrigger>
 
         </Style.Triggers>
     </Style>
 
     <Style x:Key="DefaultSBZoomScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBZoomScrollViewerStyle" />
-        <Setter Property="Width" Value="{Binding Path=(sbc:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
-        <Setter Property="Height" Value="{Binding Path=(sbc:SBForm.FormHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbp:ISBForm}}, Mode=OneWay}" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBZoomScrollViewerStyle" />
+        <Setter Property="Width" Value="{Binding Path=(rkt:SBForm.FormWidth), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
+        <Setter Property="Height" Value="{Binding Path=(rkt:SBForm.FormHeight), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:ISBForm}}, Mode=OneWay}" />
         <!-- Need extra code for scroll bar visibility as scaling back to 100% after scroll bars have been added
              does not always remove the scroll bars using the "Auto" setting
         -->
@@ -269,7 +269,7 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                             Value="Manual">
                 <Setter Property="Width" Value="NaN" />
                 <Setter Property="Height" Value="NaN" />
@@ -278,9 +278,9 @@
     </Style>
 
     <Style x:Key="DefaultSBMultiFormZoomScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultSBMultiFormZoomScrollViewerStyle" />
-        <Setter Property="Width" Value="{Binding Path=MaxTabWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMultiForm} }, Mode=OneWay}" />
-        <Setter Property="Height" Value="{Binding Path=MaxTabHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMultiForm}}, Mode=OneWay}" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultSBMultiFormZoomScrollViewerStyle" />
+        <Setter Property="Width" Value="{Binding Path=MaxTabWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMultiForm} }, Mode=OneWay}" />
+        <Setter Property="Height" Value="{Binding Path=MaxTabHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMultiForm}}, Mode=OneWay}" />
         <!-- Need extra code for scroll bar visibility as scaling back to 100% after scroll bars have been added
              does not always remove the scroll bars using the "Auto" setting
         -->
@@ -306,7 +306,7 @@
         </Setter>
 
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBWindow}}}"
+            <DataTrigger Binding="{Binding Path=SizeToContent,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBWindow}}}"
                                                             Value="Manual">
                 <Setter Property="Width" Value="NaN" />
                 <Setter Property="Height" Value="NaN" />

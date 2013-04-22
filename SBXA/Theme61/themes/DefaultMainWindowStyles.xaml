@@ -20,7 +20,7 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls" xmlns:Runtime="clr-namespace:SBXA.Runtime;assembly=SBXARuntime">
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls" xmlns:Runtime="clr-namespace:SBXA.Runtime;assembly=SBXARuntime">
     
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/Converters.xaml" />
@@ -160,27 +160,27 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
                         <!-- SBXA-4209 Changed the Label to a TextBlock so that the '_' could be visible, otherwise it was not displayed as it is -->
                         <!-- used to indicate a Access Key.                                                                                       -->
                         <TextBlock x:Name="PART_SBWindowTitlePort" Grid.Column="1" 
-                                   Text="{Binding Path=SBWindowTitle.Port, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}}" 
+                                   Text="{Binding Path=SBWindowTitle.Port, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}}" 
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
                                    />
                         <TextBlock x:Name="PART_SBWindowTitleAccount" Grid.Column="3" 
-                                   Text="{Binding Path=SBWindowTitle.Account, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}}" 
+                                   Text="{Binding Path=SBWindowTitle.Account, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}}" 
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
                                    />
                         <TextBlock x:Name="PART_SBWindowTitleSystemId" Grid.Column="5" 
-                                   Text="{Binding Path=SBWindowTitle.SystemId, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}}" 
+                                   Text="{Binding Path=SBWindowTitle.SystemId, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}}" 
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Center"
                                    />
                         <TextBlock x:Name="PART_SBWindowTitleTitle" Grid.Column="6" 
-                                   Text="{Binding Path=SBWindowTitle.Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}}" 
+                                   Text="{Binding Path=SBWindowTitle.Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}}" 
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    />
                         <TextBlock x:Name="PART_SBWindowTitleDate" Grid.Column="7" 
-                                   Text="{Binding Path=SBWindowTitle.Date, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}}" 
+                                   Text="{Binding Path=SBWindowTitle.Date, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}}" 
                                    HorizontalAlignment="Right"
                                    VerticalAlignment="Center"
                                    />
@@ -209,22 +209,22 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
                                     ToolTip="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=MinimizeSBXA}"
                                     Width="18" Height="18"
                                     x:Name="PART_SBMinimizeButton"
-                                    Style="{DynamicResource SBMinimizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="sbc:SBCommands.MinimizeMainWindowCommand"/>
+                                    Style="{DynamicResource SBMinimizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="rkt:SBCommands.MinimizeMainWindowCommand"/>
                             <Button Grid.Column="1"
                                     ToolTip="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=MaximizeSBXA}"
                                     Width="18" Height="18"
                                     x:Name="PART_SBMaximizeButton"
-                                    Style="{DynamicResource SBMaximizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="sbc:SBCommands.MaximizeMainWindowCommand"/>
+                                    Style="{DynamicResource SBMaximizeButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="rkt:SBCommands.MaximizeMainWindowCommand"/>
                             <Button Grid.Column="2"
                                     ToolTip="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=CloseSBXA}"
                                     Width="18" Height="18"
                                     x:Name="PART_SBCloseButton"
-                                    Style="{DynamicResource SBCloseButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="sbc:SBCommands.CloseMainWindowCommand"/>
+                                    Style="{DynamicResource SBCloseButtonStyle}" Margin="1,1,1,1" IsTabStop="False" Command="rkt:SBCommands.CloseMainWindowCommand"/>
                         </Grid>
                         <Control x:Name="PART_SBMainWindowTitle" DockPanel.Dock="Left" Style="{DynamicResource SBMainWindowTitleStyle}" HorizontalAlignment="Stretch" />
                     </DockPanel>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding Path=WindowState, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBMainWindow}}}"                                     
+                        <DataTrigger Binding="{Binding Path=WindowState, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBMainWindow}}}"                                     
                                      Value="Maximized">
                             <Setter TargetName="PART_SBMaximizeButton" Property="Style" Value="{DynamicResource SBMaximizedButtonStyle}" />
                             <Setter TargetName="PART_SBMaximizeButton" Property="ToolTip" Value="{Binding Converter={StaticResource SBLanguageConverter}, ConverterParameter=RestoreNormalSBXA}" />
@@ -237,23 +237,23 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
 
     <!-- DefaultMainSBPlusContainerStyle -->
     <Style x:Key="DefaultMainSBPlusContainerStyle" TargetType="{x:Type ContentControl}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="DefaultMainSBPlusContainerStyle" />
+        <Setter Property="rkt:SBUISupport.StyleName" Value="DefaultMainSBPlusContainerStyle" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="ContextMenu" 
-                Value="{Binding Source={x:Static sbc:SBPlus.Current}, Mode=OneWay,
+                Value="{Binding Source={x:Static rkt:SBPlus.Current}, Mode=OneWay,
                                 Path=GuiClickMenuDefinition,
                                 Converter={StaticResource SBContextMenuConverter}, 
                                 ConverterParameter=MainWindowContextMenu}" />
         <Style.Triggers>
             <!-- Window -->
-            <DataTrigger Binding="{Binding Path=UIDeploymentVehicle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}, Mode=OneWay}" Value="Windows">
+            <DataTrigger Binding="{Binding Path=UIDeploymentVehicle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}, Mode=OneWay}" Value="Windows">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ContentControl}">
                             <Grid x:Name="PART_SBMainSBPlusContainer"
-                                  sbc:SBUISupport.TemplateName="inline in DefaultMainSBPlusContainerStyle"
+                                  rkt:SBUISupport.TemplateName="inline in DefaultMainSBPlusContainerStyle"
                                   Opacity="1" 
                                   Background="{DynamicResource GrayMainWindowBorder}">
                                 <Border HorizontalAlignment="Stretch" 
@@ -280,7 +280,7 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
                 </Setter>
             </DataTrigger>
             <!-- Browser -->
-            <DataTrigger Binding="{Binding Path=UIDeploymentVehicle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=sbc:SBPlus}, Mode=OneWay}" Value="Browser">
+            <DataTrigger Binding="{Binding Path=UIDeploymentVehicle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=rkt:SBPlus}, Mode=OneWay}" Value="Browser">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ContentControl}">
@@ -311,7 +311,7 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
                 <DropShadowBitmapEffect Opacity="0.3" ShadowDepth="8" Color="#FF051650"/>
             </Setter.Value>
         </Setter>
-        <Setter Property="Fill" Value="{Binding Path=(sbc:SBForm.FormBorderColor), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Runtime:ISBForm}}}" />
+        <Setter Property="Fill" Value="{Binding Path=(rkt:SBForm.FormBorderColor), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Runtime:ISBForm}}}" />
 <!--
         <Setter Property="Rectangle.Fill">
             <Setter.Value>
@@ -343,8 +343,8 @@ August 11, 2011 AKP     SBXA-4209       DefaultSBMainWindowTitleStyle       Chan
                     <Grid Focusable="False" >
                         <Grid.Background>
                             <PriorityBinding FallbackValue="{x:Static SystemColors.WindowBrush}">
-                                <Binding Path="(sbc:SBGUIAttribute.SBBackground)" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus}}" Mode="OneWay" />
-                                <Binding Path="(sbc:SBControl.SBControlBackground)" Mode="OneWay" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type sbc:SBPlus}}"/>
+                                <Binding Path="(rkt:SBGUIAttribute.SBBackground)" Converter="{StaticResource SBColorConverter}" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus}}" Mode="OneWay" />
+                                <Binding Path="(rkt:SBControl.SBControlBackground)" Mode="OneWay" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type rkt:SBPlus}}"/>
                             </PriorityBinding>
                         </Grid.Background>
                     </Grid>

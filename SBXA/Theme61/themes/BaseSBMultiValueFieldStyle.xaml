@@ -11,7 +11,7 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+    xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     xmlns:sbp="http://schemas.sbxa.com/WPFControls"
     >
 
@@ -23,8 +23,8 @@
 
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type sbc:SBMultiValueField}" x:Key="BaseSBMultiValueFieldStyle" BasedOn="{StaticResource BaseSBControlStyle}">
-        <Setter Property="sbc:SBUISupport.StyleName" Value="BaseSBMultiValueFieldStyle" />
+    <Style TargetType="{x:Type rkt:SBMultiValueField}" x:Key="BaseSBMultiValueFieldStyle" BasedOn="{StaticResource BaseSBControlStyle}">
+        <Setter Property="rkt:SBUISupport.StyleName" Value="BaseSBMultiValueFieldStyle" />
         <!-- The margin, width and height are here for a multi-value field using the 'G' option. I need to check the multi-value collection in F3. It does not work. -->
         <Setter Property="Margin" Value="{Binding Path=GuiObjectDefinition.Margin, 
                                   RelativeSource={RelativeSource Mode=Self},
@@ -40,18 +40,18 @@
                       }" />
         <Setter Property="Control.VerticalAlignment" Value="Top"/>
         <Setter Property="Control.HorizontalAlignment" Value="Left"/>
-        <Setter Property="sbc:SBItemsControl.ItemsPanelTemplate" Value="{DynamicResource SBMultiValueFieldItemsPanelTemplate}"/>
-        <Setter Property="sbc:SBItemsControl.ItemsTemplate" Value="{DynamicResource SBMultiValueFieldItemTemplate}"/>
-        <Setter Property="sbc:SBItemsControl.ItemContainerStyle" Value="{DynamicResource SBMultiValueFieldItemContainerStyle}"/>
-        <Setter Property="sbc:SBItemsControl.Template" Value="{DynamicResource SBMultiValueFieldItemsControlTemplate}"/>
+        <Setter Property="rkt:SBItemsControl.ItemsPanelTemplate" Value="{DynamicResource SBMultiValueFieldItemsPanelTemplate}"/>
+        <Setter Property="rkt:SBItemsControl.ItemsTemplate" Value="{DynamicResource SBMultiValueFieldItemTemplate}"/>
+        <Setter Property="rkt:SBItemsControl.ItemContainerStyle" Value="{DynamicResource SBMultiValueFieldItemContainerStyle}"/>
+        <Setter Property="rkt:SBItemsControl.Template" Value="{DynamicResource SBMultiValueFieldItemsControlTemplate}"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type sbc:SBMultiValueField}">
+                <ControlTemplate TargetType="{x:Type rkt:SBMultiValueField}">
                     <ItemsControl ItemsSource="{TemplateBinding ItemsSource}" 
-                                  Template="{Binding Path=(sbc:SBItemsControl.Template), RelativeSource={RelativeSource TemplatedParent}}"
-                                  ItemContainerStyle="{Binding Path=(sbc:SBItemsControl.ItemContainerStyle), RelativeSource={RelativeSource TemplatedParent}}"
-                                  ItemTemplate="{Binding Path=(sbc:SBItemsControl.ItemsTemplate), RelativeSource={RelativeSource TemplatedParent}}"
-                                  ItemsPanel="{Binding Path=(sbc:SBItemsControl.ItemsPanelTemplate), RelativeSource={RelativeSource TemplatedParent}}"
+                                  Template="{Binding Path=(rkt:SBItemsControl.Template), RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemContainerStyle="{Binding Path=(rkt:SBItemsControl.ItemContainerStyle), RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemTemplate="{Binding Path=(rkt:SBItemsControl.ItemsTemplate), RelativeSource={RelativeSource TemplatedParent}}"
+                                  ItemsPanel="{Binding Path=(rkt:SBItemsControl.ItemsPanelTemplate), RelativeSource={RelativeSource TemplatedParent}}"
                                   />
                 </ControlTemplate>
             </Setter.Value>

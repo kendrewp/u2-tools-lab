@@ -11,7 +11,7 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:sbs="http://schemas.sbxa.com/Shared"
             xmlns:sbp="http://schemas.sbxa.com/WPFControls"
-            xmlns:sbc="clr-namespace:SBXA.UI.WPFControls"
+            xmlns:rkt="http://schemas.sbxa.com/WPFControls"
     >
 
     <ResourceDictionary.MergedDictionaries>
@@ -23,37 +23,37 @@
         <ResourceDictionary Source="/SBXAWinFxControls;component/Themes/ConfigurationTemplates.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <ControlTemplate TargetType="{x:Type sbc:SBReportForm}" x:Key="SBReportFormTemplate">                   
+    <ControlTemplate TargetType="{x:Type rkt:SBReportForm}" x:Key="SBReportFormTemplate">                   
         <ContentControl IsTabStop="False" Template="{DynamicResource SBFormWithBorderTemplate}">
             <DockPanel LastChildFill="True">
                 <Menu DockPanel.Dock="Top">
                     <MenuItem Header="_File">
                         <MenuItem Header="_Save As   F2"
-                                  Command="sbc:SBReportFormCommands.SBReportFormSaveCommand"
+                                  Command="rkt:SBReportFormCommands.SBReportFormSaveCommand"
                                   CommandTarget="{Binding ElementName=PART_ReportHtmlControl}"/>
                         <MenuItem Header ="_Print All   F4"
-                                  Command="sbc:SBReportFormCommands.SBReportFormPrintAllCommand"
+                                  Command="rkt:SBReportFormCommands.SBReportFormPrintAllCommand"
                                   CommandTarget="{Binding ElementName=PART_ReportHtmlControl}"/>
                         <MenuItem Header="e_Xit        CTRL-X"
-                                  Command="sbc:SBReportFormCommands.SBReportFormCloseCommand"
+                                  Command="rkt:SBReportFormCommands.SBReportFormCloseCommand"
                                   CommandTarget="{Binding ElementName=PART_ReportHtmlControl}"/>
                     </MenuItem>
                 </Menu>
-                <sbc:SBHtmlControl x:Name="PART_ReportHtmlControl" 
+                <rkt:SBHtmlControl x:Name="PART_ReportHtmlControl" 
                                Source ="{Binding Path=Source, RelativeSource={RelativeSource Mode=TemplatedParent},Mode=TwoWay}"
                                HTML ="{Binding Path=HTML, RelativeSource={RelativeSource Mode=TemplatedParent},Mode=TwoWay}"
                                />
                
             </DockPanel>
             <ContentControl.InputBindings>
-                <KeyBinding Command="sbc:SBReportFormCommands.SBReportFormSaveCommand"
+                <KeyBinding Command="rkt:SBReportFormCommands.SBReportFormSaveCommand"
                                                 Key="F2"/>               
-                <KeyBinding Command="sbc:SBReportFormCommands.SBReportFormPrintAllCommand"
+                <KeyBinding Command="rkt:SBReportFormCommands.SBReportFormPrintAllCommand"
                                                 Key="F4"/>                
-                <KeyBinding Command="sbc:SBReportFormCommands.SBReportFormCloseCommand"
+                <KeyBinding Command="rkt:SBReportFormCommands.SBReportFormCloseCommand"
                                                 Key="X"
                                                 Modifiers="Control"/>
-                <KeyBinding Command="sbc:SBReportFormCommands.SBReportFormCloseCommand"
+                <KeyBinding Command="rkt:SBReportFormCommands.SBReportFormCloseCommand"
                             Key="Escape" />
             </ContentControl.InputBindings>
         </ContentControl>
@@ -61,19 +61,19 @@
     </ControlTemplate>
 
 
-    <Style TargetType="{x:Type sbc:SBReportForm}">
-        <!--Setter Property="sbc:SBControl.ShouldSendSBCommands" Value="False" /-->
+    <Style TargetType="{x:Type rkt:SBReportForm}">
+        <!--Setter Property="rkt:SBControl.ShouldSendSBCommands" Value="False" /-->
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="sbc:SBForm.IsMaximizable" Value="True" />
-        <Setter Property="sbc:SBForm.IsMinimizable" Value="False" />
-        <Setter Property="sbc:SBForm.FormBorderWidth" Value="{x:Static sbs:GenericConstants.DEFAULT_FORM_BORDER_WIDTH}" />
-        <Setter Property="sbc:SBForm.CanHostStatusBar" Value="False" />
+        <Setter Property="rkt:SBForm.IsMaximizable" Value="True" />
+        <Setter Property="rkt:SBForm.IsMinimizable" Value="False" />
+        <Setter Property="rkt:SBForm.FormBorderWidth" Value="{x:Static rkt:GenericConstants.DEFAULT_FORM_BORDER_WIDTH}" />
+        <Setter Property="rkt:SBForm.CanHostStatusBar" Value="False" />
         <Setter Property="Template" Value="{StaticResource SBReportFormTemplate}" />
         <!-- Top/Left in WPF pixels from left of screen.
              Note: Unlike other forms pixel position in Margin is already in screen coordinates
         -->
         
-        <Setter Property="sbc:SBForm.FormBorderColor">
+        <Setter Property="rkt:SBForm.FormBorderColor">
             <Setter.Value>
                 <PriorityBinding >
                     <PriorityBinding.FallbackValue>
@@ -82,7 +82,7 @@
                             <GradientStop Color="#FF73C5F0" Offset="0"/>
                         </LinearGradientBrush>
                     </PriorityBinding.FallbackValue>
-                    <Binding Path="(sbc:SBGUIAttribute.SBBorderColor)"
+                    <Binding Path="(rkt:SBGUIAttribute.SBBorderColor)"
                              Mode="OneWay" RelativeSource="{RelativeSource Mode=Self}"
                              Converter="{StaticResource SBColorConverter}"
                              />
@@ -93,11 +93,11 @@
             </Setter.Value>
         </Setter>
         
-        <Setter Property="sbc:SBForm.SBTop"
+        <Setter Property="rkt:SBForm.SBTop"
                 Value ="{Binding Path=GuiObjectDefinition.Margin.Top, 
                                  RelativeSource={RelativeSource Mode=Self},
                                  Mode=OneWay}" />
-        <Setter Property="sbc:SBForm.SBLeft"
+        <Setter Property="rkt:SBForm.SBLeft"
                 Value ="{Binding Path=GuiObjectDefinition.Margin.Left,
                         RelativeSource={RelativeSource Mode=Self},
                    Mode=OneWay}"
